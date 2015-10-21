@@ -1,0 +1,15 @@
+Planning pour le 28:
+--------------------
+
+André:
+Consultaion et affichage des recettes
+
+Olivier:
+Création des tables et de la bas SQL
+
+Jérôme:
+Création de Login.php
+
+
+
+
