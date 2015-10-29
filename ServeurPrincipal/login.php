@@ -8,6 +8,11 @@
         <!-- TODO: supprimer le code html de cette page -->
 
 		<?php
+            $servname="localhost";
+            $dbname="phpproject"; // "cocktail"
+            $user="root";
+            $mdp="";
+            $utilisateurtablename="utilisateur";
             $PSEUDO_MAX_CHAR=20;
             $PSEUDO_MIN_CHAR=3;
             $MDP_MAX_CHAR=48;
@@ -42,6 +47,7 @@
                 else if($ss===PHP_SESSION_ACTIVE);
                 //echo"Session ACTIVE</br>\n";
                 // rien à faire
+                // cas où cette fonction est appellée 2 fois dans le même fichier.
             }
             // Première chose à faire:
             // Démarrer la session.
@@ -49,6 +55,10 @@
             startSession();
 
 
+            function custom_hash($value)
+            {
+
+            }
 
             // Sert à remplir un champ dans "form login.php" et "form register.php"
 			function PostToField($varname)
@@ -75,8 +85,7 @@
                 include 'form register.php';
 			}
 
-			// Vérifie si une session est déjà ouverte.
-			// Si oui, affiche un petit truc pour le signaler
+			// Affiche un petit truc pour indiquer à l'utilisateur son statut de connexion.
 			function printSession()
 			{
                 echo '<div id ="idsession">'."</br>\n";
@@ -91,7 +100,8 @@
             // sinon affiche le formulaire pour s'enregistrer
             function checkRegistration()
             {
-                global $PSEUDO_MAX_CHAR, $PSEUDO_MIN_CHAR, $MDP_MAX_CHAR, $MDP_MIN_CHAR;
+                global $PSEUDO_MAX_CHAR, $PSEUDO_MIN_CHAR, $MDP_MAX_CHAR, $MDP_MIN_CHAR,
+                        $servname,$dbname,$user,$mdp;
                 //startSession();
                 if($_SESSION["connu"]===true)
                     printSession();
@@ -188,6 +198,16 @@
                             $mdp_key=hash("sha256",$_POST["mdp"]);
                             //! TODO Sauvegarder les données
                             //!
+                            $mysqli = new mysqli($servname, $user, $mdp, $dbname);
+                            if($mysqli->connect_errno > 0){
+                                die('Unable to connect to database [' . $mysqli->connect_error . ']');
+                            }
+                            $query="INSERT INTO utilisateur (mail,pseudo,mdp)".
+                            "VALUES ('".htmlentities($_POST["mail"]).
+                            "','".htmlentities($_POST["pseudo"].
+                            "','".$mdp_key."')";
+                            $mysqli->query($query);
+                            //! TOD0 TERMINER CECI
                             //!
                             //!
                             //!
