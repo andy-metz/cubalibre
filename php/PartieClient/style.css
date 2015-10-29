@@ -1,0 +1,20 @@
+body{
+	 background-color: red;
+}
+/*================
+
+	CLASSE ERREUR
+
+=================*/
+.erreur{
+	display:block;
+	left:0;
+	position:relative;
+	z-index:999999;
+	width:400px;
+	background-color: black;
+	}
+
+p.erreur{
+	color:white;
+}	
