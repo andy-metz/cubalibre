@@ -3,12 +3,15 @@ Planning pour le 28:
 
 André:
 Consultaion et affichage des recettes
+Liste des recettes + détails des recettes.
 
 Olivier:
 Création des tables et de la bas SQL
+Finir le fichier de création de la bdd.
 
 Jérôme:
 Création de Login.php
+Gestion des champs demandés.
 
 
 
