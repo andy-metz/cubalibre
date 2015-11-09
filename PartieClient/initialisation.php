@@ -113,8 +113,8 @@ if (!mysqli_query($conn, $sql)) {
 
 $sql="CREATE TABLE IF NOT EXISTS ESTFILS(
 idAliment int REFERENCES ALIMENT(idAliment),
-SousCat VARCHAR(40),
-CONSTRAINT alim_a_pour_pere PRIMARY KEY(idAliment, SousCat)
+id_SousCat int,
+CONSTRAINT alim_a_pour_pere PRIMARY KEY(idAliment, id_SousCat)
 )
 ";
 
@@ -131,9 +131,9 @@ if (!mysqli_query($conn, $sql)) {
 
 $sql="CREATE TABLE IF NOT EXISTS ESTPERE(
 idAliment int ,
-SuperCat VARCHAR(40),
+id_SuperCat int,
 /*FOREIGN KEY(idAliment) REFERENCES ALIMENT(idAliment),    complété l'intégrité de la base*/
-CONSTRAINT alim_a_pour_fils PRIMARY KEY(idAliment, SuperCat)
+CONSTRAINT alim_a_pour_fils PRIMARY KEY(idAliment, id_SuperCat)
 )
 ";
 
@@ -150,7 +150,7 @@ foreach($Hierarchie as $nom =>$description_categorie){
 
     $nomalim=mysqli_real_escape_string($conn,utf8_decode($nom));  
     // Insertion des aliments dans ALIMENT
-    $sql="INSERT INTO ALIMENT (LibAliment) VALUES('$nomalim');";
+    $sql="INSERT IGNORE INTO ALIMENT (LibAliment) VALUES('$nomalim');";
 
     if(!mysqli_query($conn, $sql))
     {   echo'<p class="erreur" >'." Erreur Insertion ALiment " . mysqli_error($conn).'</p>'; }    
@@ -190,8 +190,18 @@ foreach($Hierarchie as $nom =>$description_categorie)
                 foreach($info_categorie as $nom_ss_categorie)
                 {
                  $nom_ss_categorie=mysqli_real_escape_string($conn,utf8_decode($nom_ss_categorie));                      
+                 $sql="SELECT idAliment,LibAliment
+        		    FROM ALIMENT
+         		   WHERE LibAliment='$nom_ss_categorie'";
+         		   echo $sql ."  " ;
+         		   $id_ss_cat=mysqli_query($conn,$sql);
 
-                 $sql="INSERT INTO ESTFILS (idAliment,SousCat) VALUES ( '$id_trouve' ,'$nom_ss_categorie')";
+         		   $res_id_cat=mysqli_fetch_assoc($id_ss_cat);
+
+         		   $id_cat=$res_id_cat['idAliment'];
+
+         		    echo $id_cat . "  " ;
+                 $sql="INSERT IGNORE INTO ESTFILS (idAliment,id_SousCat) VALUES ( '$id_trouve' ,'$id_cat')";
 
                     if(!mysqli_query($conn,$sql))
                     {    echo  '<p class="erreur">' . mysqli_error($conn).'</p>';                          
@@ -201,10 +211,18 @@ foreach($Hierarchie as $nom =>$description_categorie)
             if(strcmp($type_categorie,'super-categorie')==0)  
             {
                 foreach($info_categorie as $nom_sp_categorie)
-                {
-                    $nom_sp_categorie=mysqli_real_escape_string($conn,utf8_decode($nom_sp_categorie));
+                {	
+                	$nom_sp_categorie=mysqli_real_escape_string($conn,utf8_decode($nom_sp_categorie));
+                	$sql="SELECT idAliment,LibAliment
+        		    FROM ALIMENT
+         		   WHERE LibAliment='$nom_sp_categorie'";
 
-                    $sql="INSERT INTO ESTPERE(idAliment,SuperCat) VALUES('$id_trouve','$nom_sp_categorie') ";
+         		   $id_sp_cat=mysqli_query($conn,$sql);
+         		   $res_id_cat=mysqli_fetch_assoc($id_sp_cat);
+         		   $id_cat=$res_id_cat['idAliment'];
+                    
+
+                    $sql="INSERT IGNORE INTO ESTPERE(idAliment,id_SuperCat) VALUES('$id_trouve','$id_cat') ";
 
                     if(!mysqli_query($conn,$sql))
                     {    echo  '<p class="erreur">' . mysqli_error($conn).'</p>';                          
@@ -241,7 +259,7 @@ foreach($Recettes as $array_recette_courante)
 									$preparation=mysqli_real_escape_string($conn,utf8_decode($info));
 								}
 					}	
-		$sql="INSERT INTO RECETTE (LibRecette,ingredients,preparation) VALUES('$titre','$ingredients','$preparation')";	
+		$sql="INSERT IGNORE INTO RECETTE (LibRecette,ingredients,preparation) VALUES('$titre','$ingredients','$preparation')";	
 			if(!mysqli_query($conn,$sql));
 			{	 echo  '<p class="erreur">' . mysqli_error($conn).'</p>'; 				
 			}
@@ -294,7 +312,7 @@ foreach($Recettes as $array_recette_courante)
 					$res_id_aliment= mysqli_fetch_assoc($id_aliment);
 					$id_aliment_trouve=$res_id_aliment['idAliment'];
 					
-					$sql="INSERT INTO CONTIENT(idALiment,idRecette) VALUES('$id_aliment_trouve','$id_recette_trouve')";
+					$sql="INSERT IGNORE INTO CONTIENT(idALiment,idRecette) VALUES('$id_aliment_trouve','$id_recette_trouve')";
 					
 					if(!mysqli_query($conn,$sql))
 					{	 echo  '<p class="erreur">' . mysqli_error($conn).'</p>'; 				
