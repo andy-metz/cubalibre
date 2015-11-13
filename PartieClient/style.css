@@ -1,6 +1,41 @@
 body{
-	 background-color: red;
+	 background-image: url("congruent_pentagon/congruent_pentagon.png");
 }
+
+#menu{
+	position: absolute;
+	left:25%;
+	top:0%;
+	background-color: yellow;
+}
+
+#menu li{
+	position:relative;
+	display :inline;
+}
+
+.autocomplete_button{
+	width :400px;
+}
+
+.display-section{
+	position:absolute;
+	display:block;
+	top:10%;
+	left:25%;
+	width:50%;
+	height:80%;
+	background-color: white;
+	z-index:-5;
+
+}
+.search_input_wrapper{
+	top:25%;
+position:relative;
+
+}
+
+ 
 /*================
 
 	CLASSE ERREUR

@@ -8,7 +8,6 @@
 
     include'Donnees.inc.php';
 
-
 	$conn = mysqli_connect($servername, $username, $password);
 
 mysqli_set_charset($conn,("UTF8"));
@@ -69,7 +68,7 @@ if (!mysqli_query($conn, $sql)){
 
 $sql="CREATE TABLE  IF NOT EXISTS ALIMENT(
 idAliment int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-LibALiment VARCHAR(40) NOT NULL UNIQUE 
+LibAliment VARCHAR(40) NOT NULL UNIQUE 
 )";
 
 if (!mysqli_query($conn, $sql)) {
@@ -193,14 +192,12 @@ foreach($Hierarchie as $nom =>$description_categorie)
                  $sql="SELECT idAliment,LibAliment
         		    FROM ALIMENT
          		   WHERE LibAliment='$nom_ss_categorie'";
-         		   echo $sql ."  " ;
          		   $id_ss_cat=mysqli_query($conn,$sql);
 
          		   $res_id_cat=mysqli_fetch_assoc($id_ss_cat);
 
          		   $id_cat=$res_id_cat['idAliment'];
 
-         		    echo $id_cat . "  " ;
                  $sql="INSERT IGNORE INTO ESTFILS (idAliment,id_SousCat) VALUES ( '$id_trouve' ,'$id_cat')";
 
                     if(!mysqli_query($conn,$sql))
@@ -283,7 +280,6 @@ foreach($Recettes as $array_recette_courante)
 			{ //recuperation pour variable $titre		  
 			$titre=mysqli_real_escape_string($conn,utf8_decode($array_aliment_recette));		
 			$LibRecette=$titre;	
-			echo $LibRecette;
 			$sql="SELECT idRecette , LibRecette
             FROM  `RECETTE` 
             WHERE LibRecette = '$LibRecette'";
@@ -291,9 +287,7 @@ foreach($Recettes as $array_recette_courante)
 			$id_recette=mysqli_query($conn,$sql);
 			$res_id_recette = mysqli_fetch_assoc($id_recette) ;  
             $id_recette_trouve=$res_id_recette['idRecette'];
-			
-			echo $id_recette_trouve. " " ;
-			
+					
 			}
 		
 			if(strcmp($libelle,'index')==0)
@@ -327,5 +321,6 @@ $sql="DROP DATABASE myDB";
  mysqli_query($conn,$sql);*/
 
 mysqli_close($conn);
+
 	
 ?>
