@@ -1,0 +1,45 @@
+<html>
+<script type="text/javascript">
+function affiche_triangle(taille)
+{
+var i, j, zone;
+var	zone ="";
+
+	if(taille>20)
+	{
+		zone="Triangle trop grand<br />\n";
+	}
+	else
+	{
+		if(taille == 0)
+			taille = 10;
+		for(i=0; i < taille; i++)
+		{
+			for(j = 0; j <= i; j++)
+			{
+			zone += '*';
+			}
+			zone +="<br>";
+		} 
+	}
+	document.getElementById("zone").innerHTML =zone;
+	
+}
+</script>
+<head>
+	<title>Triangle avec boutons</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<div>
+	<input type="button" name="a5" value="5" onClick="affiche_triangle(5)">
+	<input type="button" name="a10" value="10" onClick="affiche_triangle(10)">
+	<input type="button" name="a15" value="15" onClick="affiche_triangle(15)">
+	<input type="button" name="a15" value="Effacer" onClick="affiche_triangle(-1)">	
+</div>
+<div id="zone"></div>
+
+
+
+</body>
+</html>

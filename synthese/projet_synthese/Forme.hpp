@@ -16,7 +16,7 @@ using namespace std;
 
 /**
 *   @file    Forme.hpp Forme.cpp
-*   @author  J�r�me Lartillot Olivier Mertz Alain Erba
+*   @author  J�r�me Lartillot Olivier Mertz André Erba
 *   @version 1.0
 *
 *   @section REQUIREMENTS

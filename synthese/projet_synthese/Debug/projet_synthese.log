@@ -1,24 +1,24 @@
-﻿Build started 20/11/2015 17:53:27.
-     1>Project "C:\Users\MERTZ\documents\visual studio 2013\Projects\projet_synthese\projet_synthese\projet_synthese.vcxproj" on node 2 (Build target(s)).
+﻿La génération a démarré 23/11/2015 16:46:40.
+     1>Projet "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\WEB\cubalibre\synthese\projet_synthese\projet_synthese.vcxproj" sur le nœud 2 (Build cible(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Polygone.cpp
-         Polygone.cpp
-     1>c:\users\mertz\documents\visual studio 2013\projects\projet_synthese\projet_synthese\polygone.cpp(24): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mertz\documents\visual studio 2013\projects\projet_synthese\projet_synthese\polygone.cpp(92): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mertz\documents\visual studio 2013\projects\projet_synthese\projet_synthese\polygone.cpp(110): warning C4018: '<' : signed/unsigned mismatch
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MERTZ\documents\visual studio 2013\Projects\projet_synthese\Debug\projet_synthese.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\MERTZ\documents\visual studio 2013\Projects\projet_synthese\Debug\projet_synthese.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MERTZ\documents\visual studio 2013\Projects\projet_synthese\Debug\projet_synthese.lib" /MACHINE:X86 Debug\Cercle.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\WEB\cubalibre\synthese\projet_synthese\Debug\projet_synthese.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\WEB\cubalibre\synthese\projet_synthese\Debug\projet_synthese.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\WEB\cubalibre\synthese\projet_synthese\Debug\projet_synthese.lib" /MACHINE:X86 Debug\Cercle.obj
+         Debug\ClientDessin.obj
+         Debug\erreur.obj
          Debug\Forme.obj
          Debug\main.obj
+         Debug\MAWinsock.obj
          Debug\Polygone.obj
          Debug\SauvegardeTxt.obj
          Debug\Segment.obj
          Debug\Transformation.obj
          Debug\Triangle.obj
          Debug\Vecteur2D.obj
-         projet_synthese.vcxproj -> C:\Users\MERTZ\documents\visual studio 2013\Projects\projet_synthese\Debug\projet_synthese.exe
-     1>Done Building Project "C:\Users\MERTZ\documents\visual studio 2013\Projects\projet_synthese\projet_synthese\projet_synthese.vcxproj" (Build target(s)).
+         projet_synthese.vcxproj -> C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\WEB\cubalibre\synthese\projet_synthese\Debug\projet_synthese.exe
+     1>Génération du projet "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC9\data\localweb\WEB\cubalibre\synthese\projet_synthese\projet_synthese.vcxproj" terminée (Build cible(s)).
 
-Build succeeded.
+La génération a réussi.
 
-Time Elapsed 00:00:04.34
+Temps écoulé 00:00:03.40

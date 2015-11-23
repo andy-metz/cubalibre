@@ -79,8 +79,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Cercle.hpp" />
+    <ClInclude Include="ClientDessin.hpp" />
+    <ClInclude Include="DessinerSwing.hpp" />
+    <ClInclude Include="erreur.h" />
     <ClInclude Include="Forme.hpp" />
     <ClInclude Include="FormeVisiteur.hpp" />
+    <ClInclude Include="MaWinsock.h" />
     <ClInclude Include="Polygone.hpp" />
     <ClInclude Include="SauvegardeTxt.hPP" />
     <ClInclude Include="Segment.hpp" />
@@ -90,8 +94,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cercle.cpp" />
+    <ClCompile Include="ClientDessin.cpp" />
+    <ClCompile Include="erreur.cpp" />
     <ClCompile Include="Forme.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MAWinsock.cpp" />
     <ClCompile Include="Polygone.cpp" />
     <ClCompile Include="SauvegardeTxt.cpp" />
     <ClCompile Include="Segment.cpp" />
