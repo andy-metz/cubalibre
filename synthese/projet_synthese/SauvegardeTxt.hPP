@@ -1,12 +1,15 @@
-#ifndef SAUVEGARDE_HPP_INCLUDED
-#define SAUVEGARDE_HPP_INCLUDED
+#ifndef SAUVEGARDETXT_HPP_INCLUDED
+#define SAUVEGARDETXT_HPP_INCLUDED
 #include "FormeVisiteur.hpp"
 #include <sstream>
+#include <iostream>
 #include <fstream>
+using namespace std;
 
-
-
-
+#include "Cercle.hpp"
+#include "Triangle.hpp"
+#include "Segment.hpp"
+#include "Polygone.hpp"
 /**
 *	@file SauvegardeTxt.hpp
 *	@author Lartillot mertz erba
@@ -17,14 +20,16 @@
 */
 
 class SauvegardeTxt : public FormeVisiteur{
-
+private:
+	int x = 0;
+	void setCompteur();
 public:
-	//void sauvegarder(	);
+	/*virtual*/	void visit(Triangle * T);
+	/*virtual*/	void visit(Polygone * P);
+	/*virtual*/	void visit(Segment * S);
+	/*virtual*/	void visit(Cercle * C);
 
-	virtual void  sauvegarder( Cercle * C);
-	virtual void  sauvegarder( Triangle * T);
-	virtual void  sauvegarder( Polygone * P);
-	virtual void  sauvegarder( Segment * S);
+
 };
 
 #endif

@@ -79,6 +79,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Cercle.hpp" />
+    <ClInclude Include="ChargementFormaCORPolygone.hpp" />
+    <ClInclude Include="ChargementForme.hpp" />
+    <ClInclude Include="ChargementFormeCOR.hpp" />
+    <ClInclude Include="ChargementFormeCORCercle.hpp" />
+    <ClInclude Include="ChargementFormeCORSegment.hpp" />
+    <ClInclude Include="ChargementFormeCORTriangle.hpp" />
     <ClInclude Include="ClientDessin.hpp" />
     <ClInclude Include="DessinerSwing.hpp" />
     <ClInclude Include="erreur.h" />
@@ -94,6 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cercle.cpp" />
+    <ClCompile Include="ChargementFormeCOR.cpp" />
+    <ClCompile Include="ChargementFormeCORCercle.cpp" />
+    <ClCompile Include="ChargementFormeCORPolygone.cpp" />
+    <ClCompile Include="ChargementFormeCORSegment.cpp" />
+    <ClCompile Include="ChargementFormeCORTriangle.cpp" />
     <ClCompile Include="ClientDessin.cpp" />
     <ClCompile Include="erreur.cpp" />
     <ClCompile Include="Forme.cpp" />

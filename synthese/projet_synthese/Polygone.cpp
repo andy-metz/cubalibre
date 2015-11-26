@@ -87,14 +87,19 @@ const vector<Vecteur2D> Polygone::getPoints() const{
 *	@return l'aire du polygone
 */
 double Polygone::calculerAire() const {
-	double somme1 = 0,somme2 = 0,somme_resultante =0, area=0;
-
-	for (int i = 1; i < points.size(); i++)
+	// rajouter fonction déterminant dans vecteur2D cpp
+	double somme1 = 0, somme2 = 0, somme_resultante = 0, area = 0, end_term1 = 0, end_term2 = 0;
+	int size_max = points.size();
+	//rajouter le premier terme de la somme + et le dernier terme de le somme -
+	for (int i = 1; i < size_max; i++)
 	{
 		somme1 = somme1 + points[i - 1].getX() * points[i].getY();
-		somme2 = somme2 - points[i].getX() * points[i-1].getY();
+		somme2 = somme2 - points[i].getX() * points[i - 1].getY();
 	}
-	somme_resultante = somme1 + somme2;
+	end_term1 = points[size_max].getX()*points[0].getY();
+	end_term2 = points[0].getX()*points[size_max].getY();
+
+	somme_resultante = somme1 + somme2 + end_term1 - end_term2;
 	area = 0.5*fabs(somme_resultante);
 	return area;
 }

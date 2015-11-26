@@ -54,6 +54,24 @@
     <ClInclude Include="erreur.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ChargementForme.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChargementFormeCOR.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChargementFormeCORCercle.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChargementFormeCORSegment.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChargementFormeCORTriangle.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChargementFormaCORPolygone.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cercle.cpp">
@@ -90,6 +108,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ClientDessin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChargementFormeCOR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChargementFormeCORCercle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChargementFormeCORTriangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChargementFormeCORSegment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChargementFormeCORPolygone.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

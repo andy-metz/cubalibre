@@ -2,12 +2,16 @@
 #include"Vecteur2D.hpp"
 
 #include"Forme.hpp"
-
+#include"ChargementFormaCORPolygone.hpp"
+#include"ChargementFormeCORCercle.hpp"
+#include"ChargementFormeCORSegment.hpp"
+#include"ChargementFormeCORTriangle.hpp"
 #include "Cercle.hpp"
 #include"Segment.hpp"
 #include"Triangle.hpp"
 #include"Polygone.hpp"
 #include "FormeVisiteur.hpp"
+#include"SauvegardeTxt.hPP"
 #include "erreur.h"
 #include "ClientDessin.hpp"
 
@@ -20,27 +24,35 @@ using namespace std;
 int main()
 {
  
-    //Forme test(BLACK);
+    //Forme test(BLACK);,
     //cout<<test.getColorAsString()<<endl;
 	//Vecteur2D centre = Vecteur2D(2,2);
 	//Cercle CE=Cercle(BLACK,centre,4);
 
 	// dessinerswing dessin(dimension);
 	// dessin->dess_cercle(C)
+	SauvegardeTxt visitor;
+	ChargementFormeCOR *pol, *tri, *cer, *seg;
+	pol = new ChargementFormeCORPolygone(NULL);
+	tri = new ChargementFormeCORTriangle(pol);
+	cer = new ChargementFormeCORCercle(tri);
+	seg = new ChargementFormeCORSegment(cer);
+	ChargementFormeCOR * chargeur = seg;
 
 	Cercle c("Cercle(rayon(10),centre(0.5,512.5))");
 	cout << c << endl;
-
+	c.accept(&visitor);
+	// cerle_1=chargeur->charge("Cercle(rayon(10),centre(0.5,512.5))");
+	// rajouter uen classe qui gère le COR
 	Segment s("Segment((0.1,2),(3,4.5))");
 	cout << s << endl;
-
+	s.accept(&visitor);
 	Triangle t("Triangle:p1(1,1),p2(4,5),p3(3,7)");
 	cout << t << endl;
-	
+	t.accept(&visitor);
 	Polygone p("Polygone:p0(1,1),p1(2, 3),p2(2, 5),p3(1, 6),p4(0, 5),p5(0, 3)");
 	cout << p << endl;
-	//system("pause");
-	/*C.accept(new SauvegardeTxt(C));*/
+	p.accept(&visitor);
 
 
 

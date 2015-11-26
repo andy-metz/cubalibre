@@ -1,0 +1,1 @@
+Cercle(centre(0.5,512.5),rayon(10))
