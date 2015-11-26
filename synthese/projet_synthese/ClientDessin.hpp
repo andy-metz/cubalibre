@@ -1,9 +1,18 @@
 #pragma once
-/*
-* ClientDessin.h
+/**
+*   @file    Polygone.hpp Polygone.cpp
+*   @author  Jérôme Lartillot Olivier Mertz Alain Erba
+*   @version 1.0
 *
-*  Created on: 26 août 2014
-*      Author: Dominique
+*   @section REQUIREMENTS
+*   -Winsock2
+*   -string
+*   -string.h
+*
+*   @section DESCRIPTION
+*
+*   Classe ClientDessin pour se connecter au server java et lui envoyer des instructions de dessin.
+*
 */
 
 
@@ -28,7 +37,7 @@ using namespace std;
 * */
 class ClientDessin
 {
-	SOCKET sock;  // informations concernant le socket à créer : famille d'adresses acceptées, mode connecté ou non, protocole 
+	SOCKET sock;  // informations concernant le socket à créer : famille d'adresses acceptées, mode connecté ou non, protocole
 	SOCKADDR_IN sockaddr; // informations concernant le serveur avec lequel on va communiquer
 
 public:
