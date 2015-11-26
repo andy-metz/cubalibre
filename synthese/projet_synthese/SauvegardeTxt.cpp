@@ -14,7 +14,10 @@ void SauvegardeTxt::setCompteur() {
 
 void SauvegardeTxt::visit(Cercle * C){
 	setCompteur();
-	ofstream file_to_save("cercle" + to_string(x) + ".txt", ios::out);
+	stringstream ss;
+	ss<<x;
+	string xs=ss.str();
+	ofstream file_to_save("cercle" + xs + ".txt", ios::out);
 	if (!file_to_save)
 	{
 		cerr << "Erreur a l'ouverture du fichier" << endl;
@@ -32,7 +35,10 @@ void SauvegardeTxt::visit(Cercle * C){
 */
 void SauvegardeTxt::visit(Triangle* T){
 	setCompteur();
-	ofstream file_to_save("triangle" + to_string(x) + ".txt", ios::out);
+	stringstream ss;
+	ss<<x;
+	string xs=ss.str();
+	ofstream file_to_save("triangle" + xs + ".txt", ios::out);
 	if (!file_to_save)
 	{
 		cerr << "Erreur a l'ouverture du fichier" << endl;
@@ -50,7 +56,10 @@ void SauvegardeTxt::visit(Triangle* T){
 */
 void SauvegardeTxt::visit(Segment * S){
 	setCompteur();
-	ofstream file_to_save("segment" + to_string(x) + ".txt", ios::out);
+	stringstream ss;
+	ss<<x;
+	string xs=ss.str();
+	ofstream file_to_save("segment" + xs + ".txt", ios::out);
 	if (!file_to_save)
 	{
 		cerr << "Erreur a l'ouverture du fichier" << endl;
@@ -68,7 +77,10 @@ void SauvegardeTxt::visit(Segment * S){
 */
 void SauvegardeTxt::visit(Polygone *P){
 	setCompteur();
-	ofstream file_to_save("polygone" + to_string(x) + ".txt", ios::out);
+	stringstream ss;
+	ss<<x;
+	string xs=ss.str();
+	ofstream file_to_save("polygone" + xs + ".txt", ios::out);
 	if (!file_to_save)
 	{
 		cerr << "Erreur a l'ouverture du fichier" << endl;

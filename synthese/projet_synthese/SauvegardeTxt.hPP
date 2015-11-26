@@ -4,6 +4,7 @@
 #include <sstream>
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 #include "Cercle.hpp"
@@ -14,7 +15,7 @@ using namespace std;
 *	@file SauvegardeTxt.hpp
 *	@author Lartillot mertz erba
 *
-*	@Class sauvegarde
+*	@class sauvegarde
 *	Class permettant de sauvegarder une forme
 *
 */
