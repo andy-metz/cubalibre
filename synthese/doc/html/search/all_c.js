@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['sauvegarde',['sauvegarde',['../classsauvegarde.html',1,'']]],
   ['sauvegardetxt',['SauvegardeTxt',['../class_sauvegarde_txt.html',1,'']]],
   ['sauvegardetxt_2ehpp',['SauvegardeTxt.hPP',['../_sauvegarde_txt_8h_p_p.html',1,'']]],
   ['segment',['Segment',['../class_segment.html',1,'Segment'],['../class_segment.html#a12eee87c71a193e24baeadcce81cdbb8',1,'Segment::Segment(const Segment &amp;S)'],['../class_segment.html#ad8540dcab0786901c2e848f33fca3104',1,'Segment::Segment(const Vecteur2D A, const Vecteur2D B, Color couleur=CYAN)'],['../class_segment.html#a205004c77120c7acde35f831129e3ce0',1,'Segment::Segment(const string &amp;s)']]],

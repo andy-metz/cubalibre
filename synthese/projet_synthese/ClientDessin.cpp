@@ -86,8 +86,51 @@ ClientDessin::~ClientDessin()
 	cout << "arrêt normal du client" << endl;
 }
 
+void envoyer(const string&str)const
+{
+    int r = send(sock, requete.c_str(), requete.length(), 0); //envoi de la requête au serveur
+
+	if (r == SOCKET_ERROR)
+		throw Erreur("Send failed.");
+	//cout << "requête envoyée." << endl;
+}
+
+/**
+*   Envoie un triangle au serveur pour qu'il soit dessiné.
+*   @param triangle le triangle à dessiner.
+*/
+ void visit( Triangle * triangle)
+ {
+    envoyer(triangle);
+ }
+/**
+*   Envoie un polygone au serveur pour qu'il soit dessiné.
+*   @param polygone le polygone à dessiner.
+*/
+void visit( Polygone * polygone)
+{
+    envoyer(polygone);
+}
+/**
+*   Envoie un segment au serveur pour qu'il soit dessiné.
+*   @param segment le segment à dessiner.
+*/
+void visit( Segment * segment)
+{
+    envoyer(segment);
+}
+/**
+*   Envoie un cercle au serveur pour qu'il soit dessiné.
+*   @param cercle le cercle à dessiner.
+*/
+void visit( Cercle * cercle)
+{
+    envoyer(cercle);
+}
+
 // il y a une GROSSE redondance de code (ou autrement dit un GROS copié-collé pourri) sur les 3 méthodes suivantes : elle doit être éliminée !!!!!!!
 // cf. classe JAVA ClientDessin - méthode encoder()
+// De Jérôme: oui il faut facoriser ça avec une fonction privée qui envoi.
 
 void ClientDessin::ouvreFenetreGraphique(const string & titre, const int bordGauche, const int bordHaut, const int largeur, const int hauteur)
 {
