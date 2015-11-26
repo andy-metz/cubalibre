@@ -1,7 +1,20 @@
 #pragma once
+
 /**
-classe Erreur
+*   @file    Polygone.hpp Polygone.cpp
+*   @author  Jérôme Lartillot Olivier Mertz Alain Erba
+*   @version 1.0
+*
+*   @section REQUIREMENTS
+*   -iostream
+*   -string
+*
+*   @section DESCRIPTION
+*
+*   Exception utilisée pour le réseaus
+*
 */
+
 #ifndef ERREUR
 #define ERREUR
 
@@ -10,6 +23,9 @@ using namespace std;
 #include <string>
 #include <iostream>
 
+/**
+    Classe Erreur
+*/
 class Erreur
 {
 public:
