@@ -1,7 +1,7 @@
 #pragma once
 /**
 *   @file    Polygone.hpp Polygone.cpp
-*   @author  Jérôme Lartillot Olivier Mertz Alain Erba
+*   @author  Jérôme Lartillot Olivier Mertz André Erba
 *   @version 1.0
 *
 *   @section REQUIREMENTS
@@ -19,6 +19,11 @@
 #include <WinSock2.h>
 #include <string>
 #include <string.h>
+
+#include"Cercle.hpp"
+#include"Polygone.hpp"
+#include"Segment.hpp"
+#include"Triangle.hpp"
 
 using namespace std;
 

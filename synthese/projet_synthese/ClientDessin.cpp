@@ -86,9 +86,9 @@ ClientDessin::~ClientDessin()
 	cout << "arrêt normal du client" << endl;
 }
 
-void envoyer(const string&str)const
+void ClientDessin::envoyer(const string&str)const
 {
-    int r = send(sock, requete.c_str(), requete.length(), 0); //envoi de la requête au serveur
+    int r = send(sock, str.c_str(), str.length(), 0); //envoi de la requête au serveur
 
 	if (r == SOCKET_ERROR)
 		throw Erreur("Send failed.");
@@ -99,33 +99,33 @@ void envoyer(const string&str)const
 *   Envoie un triangle au serveur pour qu'il soit dessiné.
 *   @param triangle le triangle à dessiner.
 */
- void visit( Triangle * triangle)
+ void ClientDessin::visit( Triangle * triangle)
  {
-    envoyer(triangle);
+    envoyer((Triangle)*triangle);
  }
 /**
 *   Envoie un polygone au serveur pour qu'il soit dessiné.
 *   @param polygone le polygone à dessiner.
 */
-void visit( Polygone * polygone)
+void ClientDessin::visit( Polygone * polygone)
 {
-    envoyer(polygone);
+    envoyer((Polygone)*polygone);
 }
 /**
 *   Envoie un segment au serveur pour qu'il soit dessiné.
 *   @param segment le segment à dessiner.
 */
-void visit( Segment * segment)
+void ClientDessin::visit( Segment * segment)
 {
-    envoyer(segment);
+    envoyer((Segment)*segment);
 }
 /**
 *   Envoie un cercle au serveur pour qu'il soit dessiné.
 *   @param cercle le cercle à dessiner.
 */
-void visit( Cercle * cercle)
+void ClientDessin::visit( Cercle * cercle)
 {
-    envoyer(cercle);
+    envoyer((Cercle)*cercle);
 }
 
 // il y a une GROSSE redondance de code (ou autrement dit un GROS copié-collé pourri) sur les 3 méthodes suivantes : elle doit être éliminée !!!!!!!

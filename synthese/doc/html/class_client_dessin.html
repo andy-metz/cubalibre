@@ -105,17 +105,13 @@ Graphe d'héritage de ClientDessin:</div>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a750fc4da47691b82b97942f8ac429afe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_client_dessin.html#a750fc4da47691b82b97942f8ac429afe">ClientDessin</a> (const string &amp;adresseServeurDessin, const int portServeurDessin)</td></tr>
 <tr class="separator:a750fc4da47691b82b97942f8ac429afe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7500c8312f992ecb2f83371900295c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7500c8312f992ecb2f83371900295c4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>visit</b> (<a class="el" href="class_triangle.html">Triangle</a> *triangle)</td></tr>
+<tr class="memitem:ae7500c8312f992ecb2f83371900295c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_client_dessin.html#ae7500c8312f992ecb2f83371900295c4">visit</a> (<a class="el" href="class_triangle.html">Triangle</a> *triangle)</td></tr>
 <tr class="separator:ae7500c8312f992ecb2f83371900295c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56f07966b950a337df9e3083f14dbad7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56f07966b950a337df9e3083f14dbad7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>visit</b> (<a class="el" href="class_polygone.html">Polygone</a> *polygone)</td></tr>
+<tr class="memitem:a56f07966b950a337df9e3083f14dbad7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_client_dessin.html#a56f07966b950a337df9e3083f14dbad7">visit</a> (<a class="el" href="class_polygone.html">Polygone</a> *polygone)</td></tr>
 <tr class="separator:a56f07966b950a337df9e3083f14dbad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a830877e13f603db3ba0c5339c9b1be67"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a830877e13f603db3ba0c5339c9b1be67"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>visit</b> (<a class="el" href="class_segment.html">Segment</a> *segment)</td></tr>
+<tr class="memitem:a830877e13f603db3ba0c5339c9b1be67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_client_dessin.html#a830877e13f603db3ba0c5339c9b1be67">visit</a> (<a class="el" href="class_segment.html">Segment</a> *segment)</td></tr>
 <tr class="separator:a830877e13f603db3ba0c5339c9b1be67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9262a0a2b6224af793d71a372d7b6d69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9262a0a2b6224af793d71a372d7b6d69"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>visit</b> (<a class="el" href="class_cercle.html">Cercle</a> *cercle)</td></tr>
+<tr class="memitem:a9262a0a2b6224af793d71a372d7b6d69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_client_dessin.html#a9262a0a2b6224af793d71a372d7b6d69">visit</a> (<a class="el" href="class_cercle.html">Cercle</a> *cercle)</td></tr>
 <tr class="separator:a9262a0a2b6224af793d71a372d7b6d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ef39524e7889dc3ba9533f13d370850"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ef39524e7889dc3ba9533f13d370850"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ouvreFenetreGraphique</b> (const string &amp;titre, const int bordGauche, const int bordHaut, const int largeur, const int hauteur)</td></tr>
@@ -246,6 +242,138 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ouvreFenetreGraphique
 
 </div>
 </div>
+<a class="anchor" id="ae7500c8312f992ecb2f83371900295c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClientDessin::visit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_triangle.html">Triangle</a> *&#160;</td>
+          <td class="paramname"><em>triangle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Envoie un triangle au serveur pour qu'il soit dessiné. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">triangle</td><td>le triangle à dessiner. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémente <a class="el" href="class_forme_visiteur.html">FormeVisiteur</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56f07966b950a337df9e3083f14dbad7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClientDessin::visit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_polygone.html">Polygone</a> *&#160;</td>
+          <td class="paramname"><em>polygone</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Envoie un polygone au serveur pour qu'il soit dessiné. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">polygone</td><td>le polygone à dessiner. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémente <a class="el" href="class_forme_visiteur.html">FormeVisiteur</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a830877e13f603db3ba0c5339c9b1be67"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClientDessin::visit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_segment.html">Segment</a> *&#160;</td>
+          <td class="paramname"><em>segment</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Envoie un segment au serveur pour qu'il soit dessiné. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">segment</td><td>le segment à dessiner. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémente <a class="el" href="class_forme_visiteur.html">FormeVisiteur</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9262a0a2b6224af793d71a372d7b6d69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClientDessin::visit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_cercle.html">Cercle</a> *&#160;</td>
+          <td class="paramname"><em>cercle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Envoie un cercle au serveur pour qu'il soit dessiné. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cercle</td><td>le cercle à dessiner. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implémente <a class="el" href="class_forme_visiteur.html">FormeVisiteur</a>.</p>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li>C:/Users/Jérôme/Documents/github/cubalibre/synthese/projet_synthese/<a class="el" href="_client_dessin_8hpp_source.html">ClientDessin.hpp</a></li>
 <li>C:/Users/Jérôme/Documents/github/cubalibre/synthese/projet_synthese/ClientDessin.cpp</li>
@@ -253,7 +381,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ouvreFenetreGraphique
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Jeudi 26 Novembre 2015 17:51:04 pour Projet de synthèse par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Vendredi 27 Novembre 2015 15:05:34 pour Projet de synthèse par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
