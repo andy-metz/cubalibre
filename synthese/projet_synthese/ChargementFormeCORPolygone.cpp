@@ -1,4 +1,4 @@
-#include "ChargementFormaCORPolygone.hpp"
+#include "ChargementFormeCORPolygone.hpp"
 /**
 *	Enchaine le maillon à suivant en le plaçant en tête
 *	@param suivant : le maillon qui devient la tête de la liste
@@ -11,7 +11,6 @@ ChargementFormeCORPolygone::ChargementFormeCORPolygone(ChargementFormeCOR * suiv
 */
 Polygone * ChargementFormeCORPolygone::chargeExpertise(const string texte) const{
 	string string_to_extract;
-
 	int pos = texte.find("polygone");
 	if ((pos == string::npos) || (pos>0))
 	{	return NULL;
@@ -22,7 +21,6 @@ Polygone * ChargementFormeCORPolygone::chargeExpertise(const string texte) const
 		{	return NULL;
 		}
 		getline(file_to_open, string_to_extract);
-		Polygone P(string_to_extract);
-		return &P;
+		return new Polygone(string_to_extract);
 	}
 }

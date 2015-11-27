@@ -22,13 +22,14 @@ Polygone::Polygone(const vector<Vecteur2D> tab_point,Color nouv_couleur):
 Polygone::Polygone(const string &s){
 	int p_count = 0;// on compte le nombre de points dans le chaine
 	for (int i = 0; i < s.size(); i++)
-	{		if (s[i] == 'p')
+	{
+		if (s[i] == 'p')
 			p_count++;
 	}
 	int polyPos = s.find("Polygone:");
-	int finPoly = s.find(",end");
 	if (polyPos == string::npos)
-		cout << "error" << endl;
+	{	cout << "error" << endl;
+	}
 
 	string vect_courant;
 	int decalage = 0;//on compte le decalage de l'avancement dans la chaine
@@ -39,12 +40,12 @@ Polygone::Polygone(const string &s){
 		pos = s.find("p");// on arrive sur un vecteur
 		if (pos == string::npos)
 			cout << "error" << endl;
-		vpos = s.find(",", pos + decalage);
-		vpos = s.find(",", vpos);
+		vpos = s.find(",", pos +decalage);
+		vpos = s.find(",", vpos+1 );
 		if (vpos == string::npos)
 			cout << "error" << endl;
 		vect_courant = s.substr(polyPos + pos + 1 + decalage, vpos + decalage - polyPos);
-		decalage = decalage + pos;
+		decalage = decalage + 7;
 		Vecteur2D  vect2D(vect_courant);
 		points.push_back(vect2D);
 	}

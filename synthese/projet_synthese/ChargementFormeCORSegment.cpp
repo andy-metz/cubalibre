@@ -12,6 +12,7 @@ ChargementFormeCORSegment::ChargementFormeCORSegment(ChargementFormeCOR * suivan
 
 Segment * ChargementFormeCORSegment::chargeExpertise(const string texte) const{
 	string string_to_extract;
+
 	int pos = texte.find("segment");
 	if ((pos == string::npos) || (pos>0))
 	{	return NULL;
@@ -23,7 +24,6 @@ Segment * ChargementFormeCORSegment::chargeExpertise(const string texte) const{
 		{	return NULL;
 		}
 		getline(file_to_open, string_to_extract);
-		Segment S(string_to_extract);
-		return &S;
+		return new Segment(string_to_extract);
 	}
 }

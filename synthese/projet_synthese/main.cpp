@@ -2,7 +2,7 @@
 #include"Vecteur2D.hpp"
 
 #include"Forme.hpp"
-#include"ChargementFormaCORPolygone.hpp"
+#include"ChargementFormeCORPolygone.hpp"
 #include"ChargementFormeCORCercle.hpp"
 #include"ChargementFormeCORSegment.hpp"
 #include"ChargementFormeCORTriangle.hpp"
@@ -45,23 +45,28 @@ int main(int argv, char**argc)
 	ChargementFormeCOR * chargeur = seg;
 
 	Cercle c("Cercle(rayon(10),centre(0.5,512.5))");
-	cout << c << endl;
+	//cout << c << endl;
 	c.accept(&visitor);
 	Cercle * cercle_1=(Cercle*)chargeur->charge("cercle1.txt");
-	cout <<(Cercle*) cercle_1 << endl;
-	// rajouter uen classe qui gère le COR
+//	cout <<*cercle_1 << endl;
+
 	Segment s("Segment((0.1,2),(3,4.5))");
-	cout << s << endl;
+	//cout << s << endl;
 	s.accept(&visitor);
 	Segment * seg_2 = (Segment*)chargeur->charge("segment2.txt");
-	cout <<(Segment *) seg_2 << endl;
-	Triangle t("Triangle:p1(1,1),p2(4,5),p3(3,7)");
-	cout << t << endl;
+	//cout << *seg_2 << endl;
 
+	Triangle t("Triangle:p1(1,1),p2(4,5),p3(3,7)");
+	//cout << t << endl;
 	t.accept(&visitor);
-	Polygone p("Polygone:p0(1,1),p1(2, 3),p2(2, 5),p3(1, 6),p4(0, 5),p5(0, 3)");
+	Triangle * tri_3 = (Triangle*)chargeur->charge("triangle3.txt");
+	//cout <<(Triangle) *tri_3 << endl;
+
+	Polygone p("Polygone:p0(1,1),p1(2,3),p2(2,5),p3(1,6),p4(0,5),p5(0,3)");
 	cout << p << endl;
 	p.accept(&visitor);
+	Polygone * poly_4 = (Polygone*)chargeur->charge("polygone4.txt");
+	cout << *poly_4 << endl;
 
 
 

@@ -69,7 +69,7 @@
     <ClInclude Include="ChargementFormeCORTriangle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ChargementFormaCORPolygone.hpp">
+    <ClInclude Include="ChargementFormeCORPolygone.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
