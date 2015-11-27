@@ -74,9 +74,10 @@ try
         x2 = Integer.parseInt(arguments[3].trim());
         y2 = Integer.parseInt(arguments[4].trim());
     
-        if (opération.equalsIgnoreCase("drawLine"))             // if-else à éliminer par l'utilisation du Design Pattern "Chain Of Responsibility" 
+        if (opération.equalsIgnoreCase("drawLine")) {            // if-else à éliminer par l'utilisation du Design Pattern "Chain Of Responsibility" 
             cadreDessin.graphics.drawLine(x1,y1,x2,y2);
-           
+        System.out.println("coordonnées: "+Integer.toString(x1)+Integer.toString(y1)+Integer.toString(x2)+Integer.toString(y2));
+        }
         else
             if (opération.equalsIgnoreCase("fillOval"))
                 cadreDessin.graphics.fillOval(x1,y1,x2,y2);

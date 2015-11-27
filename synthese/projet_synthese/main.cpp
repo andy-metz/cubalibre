@@ -12,7 +12,7 @@
 #include"Polygone.hpp"
 
 #include"TransformerVisiteur.hpp"
-//#include"OpenGLVisiteur.hpp"
+#include"OpenGLVisiteur.hpp"
 
 #include "FormeVisiteur.hpp"
 #include"SauvegardeTxt.hPP"
@@ -92,6 +92,7 @@ int main(int argv, char**argc)
 		int y2 = 500;
 
 		clientDessin.traceSegment(x1, y1, x2, y2);
+		s.accept(&clientDessin);
 
 	}
 	catch (Erreur e)
@@ -122,7 +123,7 @@ int main(int argv, char**argc)
     *
     *
     */
-   /* Cercle cc("Cercle(rayon(142),centre(0,0))");
+    Cercle cc("Cercle(rayon(142),centre(0,0))");
     cc.setColor(GREEN);
     cout<<cc<<endl;
 
@@ -157,7 +158,7 @@ int main(int argv, char**argc)
     tt.accept(&glv);
     ss.accept(&glv);
     pp.accept(&glv);
-    glv.render();*/
+    glv.render();
 
     return 0;
 }

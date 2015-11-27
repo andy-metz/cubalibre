@@ -100,46 +100,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// A André:</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// Le client n&#39;a pas besoin de se préoccuper de comment le serveur gère l&#39;affichega,</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// l&#39;ouverture de la fenêtre peut être automatisée lors d&#39;une connection entrante.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// Rien dans le sujet ne demande de remplir une élipse, il n&#39;y a que des cercles et</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// il faut en tracer le contour uniquement.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// ClientDessin ajoute une fonctionnalitée à notre ensemble de formes.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Par conséquent c&#39;est une classe qui hérite de FormeVisiteur et</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// implémente chacune de ses fonctions abstraites.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// Ce sont ses fonctions qui doivent être utilisées,</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// traceSegment est donc aussi inutile.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// Pour finir, les formes contiennent un opérateur de conversion en string déjà codé,</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// qui permet de les envoyer sans avoir plus à coder.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// Fin du client, le reste est à écrire dans la partie java.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_client_dessin.html">   57</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_client_dessin.html">ClientDessin</a>: <span class="keyword">public</span> <a class="code" href="class_forme_visiteur.html">FormeVisiteur</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    SOCKET sock;  <span class="comment">// informations concernant le socket à créer : famille d&#39;adresses acceptées, mode connecté ou non, protocole</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    SOCKADDR_IN sockaddr; <span class="comment">// informations concernant le serveur avec lequel on va communiquer</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_client_dessin.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_client_dessin.html">ClientDessin</a>: <span class="keyword">public</span> <a class="code" href="class_forme_visiteur.html">FormeVisiteur</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    SOCKET sock;  <span class="comment">// informations concernant le socket à créer : famille d&#39;adresses acceptées, mode connecté ou non, protocole</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    SOCKADDR_IN sockaddr; <span class="comment">// informations concernant le serveur avec lequel on va communiquer</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> envoyer(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;str)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_client_dessin.html">ClientDessin</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; adresseServeurDessin, <span class="keyword">const</span> <span class="keywordtype">int</span> portServeurDessin);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    ~<a class="code" href="class_client_dessin.html">ClientDessin</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// héritées de FormeVisiteur</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> visit( <a class="code" href="class_triangle.html">Triangle</a> * triangle);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> visit( <a class="code" href="class_polygone.html">Polygone</a> * polygone);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> visit( <a class="code" href="class_segment.html">Segment</a> * segment);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> visit( <a class="code" href="class_cercle.html">Cercle</a> * cercle);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> ouvreFenetreGraphique(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; titre, <span class="keyword">const</span> <span class="keywordtype">int</span> bordGauche, <span class="keyword">const</span> <span class="keywordtype">int</span> bordHaut, <span class="keyword">const</span> <span class="keywordtype">int</span> largeur, <span class="keyword">const</span> <span class="keywordtype">int</span> hauteur);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> envoyer(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;str)<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_client_dessin.html">ClientDessin</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; adresseServeurDessin, <span class="keyword">const</span> <span class="keywordtype">int</span> portServeurDessin);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ~<a class="code" href="class_client_dessin.html">ClientDessin</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// héritées de FormeVisiteur</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> visit( <a class="code" href="class_triangle.html">Triangle</a> * triangle);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> visit( <a class="code" href="class_polygone.html">Polygone</a> * polygone);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> visit( <a class="code" href="class_segment.html">Segment</a> * segment);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> visit( <a class="code" href="class_cercle.html">Cercle</a> * cercle);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> ouvreFenetreGraphique(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; titre, <span class="keyword">const</span> <span class="keywordtype">int</span> bordGauche, <span class="keyword">const</span> <span class="keywordtype">int</span> bordHaut, <span class="keyword">const</span> <span class="keywordtype">int</span> largeur, <span class="keyword">const</span> <span class="keywordtype">int</span> hauteur);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> traceSegment(<span class="keyword">const</span> <span class="keywordtype">int</span> x1, <span class="keyword">const</span> <span class="keywordtype">int</span> y1, <span class="keyword">const</span> <span class="keywordtype">int</span> x2, <span class="keyword">const</span> <span class="keywordtype">int</span> y2);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> remplitEllipse(<span class="keyword">const</span> <span class="keywordtype">int</span> bordGauche, <span class="keyword">const</span> <span class="keywordtype">int</span> bordHaut, <span class="keyword">const</span> <span class="keywordtype">int</span> largeur, <span class="keyword">const</span> <span class="keywordtype">int</span> hauteur);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="ttc" id="class_client_dessin_html"><div class="ttname"><a href="class_client_dessin.html">ClientDessin</a></div><div class="ttdef"><b>Definition:</b> ClientDessin.hpp:57</div></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> traceSegment(<span class="keyword">const</span> <span class="keywordtype">int</span> x1, <span class="keyword">const</span> <span class="keywordtype">int</span> y1, <span class="keyword">const</span> <span class="keywordtype">int</span> x2, <span class="keyword">const</span> <span class="keywordtype">int</span> y2);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="ttc" id="class_client_dessin_html"><div class="ttname"><a href="class_client_dessin.html">ClientDessin</a></div><div class="ttdef"><b>Definition:</b> ClientDessin.hpp:43</div></div>
 <div class="ttc" id="class_triangle_html"><div class="ttname"><a href="class_triangle.html">Triangle</a></div><div class="ttdef"><b>Definition:</b> Triangle.hpp:32</div></div>
 <div class="ttc" id="class_forme_visiteur_html"><div class="ttname"><a href="class_forme_visiteur.html">FormeVisiteur</a></div><div class="ttdef"><b>Definition:</b> FormeVisiteur.hpp:35</div></div>
 <div class="ttc" id="_segment_8hpp_html"><div class="ttname"><a href="_segment_8hpp.html">Segment.hpp</a></div></div>
@@ -152,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 27 Novembre 2015 15:05:33 pour Projet de synthèse par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Vendredi 27 Novembre 2015 17:43:26 pour Projet de synthèse par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
