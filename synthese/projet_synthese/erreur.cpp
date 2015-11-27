@@ -1,6 +1,7 @@
 /**
 mise en oeuvre de la classe Erreur
 */
+#define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 
 #include <stdio.h>
@@ -8,6 +9,8 @@ using namespace std;
 #include <iostream>
 #include <string>
 #include "Erreur.h"
+//#pragma warning(disable: warning-code)
+
 
 //int Erreur::LONGUEURMESSAGE(50);
 
