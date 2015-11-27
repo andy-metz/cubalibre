@@ -10,7 +10,7 @@ ChargementFormeCORCercle::ChargementFormeCORCercle(ChargementFormeCOR * suivant)
 *	@param texte : la chaine à vérifier
 *	@return un cercle construit par string
 */
-Forme * ChargementFormeCORCercle::chargeExpertise(const string texte) const{
+Cercle * ChargementFormeCORCercle::chargeExpertise(const string texte) const{
 	string string_to_extract;
 	
 	int pos=texte.find("cercle");
@@ -18,7 +18,8 @@ Forme * ChargementFormeCORCercle::chargeExpertise(const string texte) const{
 	{	return NULL;
 	}
 	else
-	{	ifstream file_to_open(texte, ios::in);
+	{	ifstream file_to_open;
+		file_to_open.open(texte, ios::in);
 		if (!file_to_open)
 		{	return NULL;
 		}

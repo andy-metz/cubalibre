@@ -12,7 +12,7 @@
 #include"Polygone.hpp"
 
 #include"TransformerVisiteur.hpp"
-#include"OpenGLVisiteur.hpp"
+//#include"OpenGLVisiteur.hpp"
 
 #include "FormeVisiteur.hpp"
 #include"SauvegardeTxt.hPP"
@@ -47,11 +47,14 @@ int main(int argv, char**argc)
 	Cercle c("Cercle(rayon(10),centre(0.5,512.5))");
 	cout << c << endl;
 	c.accept(&visitor);
-	// cerle_1=chargeur->charge("Cercle(rayon(10),centre(0.5,512.5))");
+	Cercle * cercle_1=(Cercle*)chargeur->charge("cercle1.txt");
+	cout <<(Cercle*) cercle_1 << endl;
 	// rajouter uen classe qui gère le COR
 	Segment s("Segment((0.1,2),(3,4.5))");
 	cout << s << endl;
 	s.accept(&visitor);
+	Segment * seg_2 = (Segment*)chargeur->charge("segment2.txt");
+	cout <<(Segment *) seg_2 << endl;
 	Triangle t("Triangle:p1(1,1),p2(4,5),p3(3,7)");
 	cout << t << endl;
 
@@ -91,7 +94,7 @@ int main(int argv, char**argc)
 		cerr << e << endl;
 	}
 
-
+	system("pause");
 
 
     /*
@@ -114,7 +117,7 @@ int main(int argv, char**argc)
     *
     *
     */
-    Cercle cc("Cercle(rayon(142),centre(0,0))");
+   /* Cercle cc("Cercle(rayon(142),centre(0,0))");
     cc.setColor(GREEN);
     cout<<cc<<endl;
 
@@ -149,7 +152,7 @@ int main(int argv, char**argc)
     tt.accept(&glv);
     ss.accept(&glv);
     pp.accept(&glv);
-    glv.render();
+    glv.render();*/
 
     return 0;
 }

@@ -9,10 +9,10 @@ ChargementFormeCORTriangle::ChargementFormeCORTriangle(ChargementFormeCOR * suiv
 *	@param texte : la chaine à vérifier
 *	@return un Triangle construit par string
 */
-Forme * ChargementFormeCORTriangle::chargeExpertise(const string texte) const{
+Triangle * ChargementFormeCORTriangle::chargeExpertise(const string texte) const{
 	string string_to_extract;
 
-	int pos = texte.find("Triangle");
+	int pos = texte.find("triangle");
 	if ((pos == string::npos) || (pos>0))
 	{	return NULL;
 	}

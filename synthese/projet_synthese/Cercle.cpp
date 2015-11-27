@@ -126,11 +126,12 @@ void Cercle::setCentre(const Vecteur2D &nouv_point){
 /**
 *   Opérateur de convertion d'un cercle en chaîne de caractères.
 *   @return Le cercle sous forme de chaîne.
+*	*Cercle(.*rayon(r).*centre(x,y).*
 */
 Cercle::operator string()const
 {
     stringstream ss;
-    ss<<"Cercle(centre"<<(string)centre<<",rayon("<<rayon<<"))";
+	ss << "Cercle(rayon(" << rayon << "),centre" << (string)centre << ")";
     string s=ss.str();
     return s;
 }

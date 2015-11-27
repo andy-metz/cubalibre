@@ -13,18 +13,18 @@ using namespace std;
 
 Erreur::Erreur()
 {
-	strcpy(this->message, "Erreur !");
+	strcpy_s(this->message, "Erreur !");
 }
 
 Erreur::Erreur(const char * messageErreur)
 {
-	strcpy(this->message, "Erreur : ");
+	strcpy_s(this->message, "Erreur : ");
 	int l = strlen(messageErreur);
 	static int n = LONGUEURMESSAGE - 9;
-	if (l <= n) strcat(this->message, messageErreur);
+	if (l <= n) strcat_s(this->message, messageErreur);
 	else
 	{
-		strncat(this->message, messageErreur, n);
+		strncat_s(this->message, messageErreur, n);
 		this->message[LONGUEURMESSAGE] = '\0';
 	}
 }

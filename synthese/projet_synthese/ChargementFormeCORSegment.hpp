@@ -20,7 +20,7 @@ class ChargementFormeCORSegment : public ChargementFormeCOR{
 public:
 	ChargementFormeCORSegment(ChargementFormeCOR * suivant);
 
-	Forme * chargeExpertise(const string texte) const;
+	Segment * chargeExpertise(const string texte) const;
 
 };
 #endif

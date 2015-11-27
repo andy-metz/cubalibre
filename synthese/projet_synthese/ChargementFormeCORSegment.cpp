@@ -10,15 +10,15 @@ ChargementFormeCORSegment::ChargementFormeCORSegment(ChargementFormeCOR * suivan
 *	@return un Segment construit par string
 */
 
-Forme * ChargementFormeCORSegment::chargeExpertise(const string texte) const{
+Segment * ChargementFormeCORSegment::chargeExpertise(const string texte) const{
 	string string_to_extract;
-
-	int pos = texte.find("Segment");
+	int pos = texte.find("segment");
 	if ((pos == string::npos) || (pos>0))
 	{	return NULL;
 	}
 	else
-	{	ifstream file_to_open(texte, ios::in);
+	{	ifstream file_to_open;
+		file_to_open.open(texte, ios::in);
 		if (!file_to_open)
 		{	return NULL;
 		}

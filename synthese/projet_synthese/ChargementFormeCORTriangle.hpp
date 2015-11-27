@@ -20,7 +20,7 @@ class ChargementFormeCORTriangle : public ChargementFormeCOR{
 public:
 	ChargementFormeCORTriangle(ChargementFormeCOR * suivant);
 
-	Forme * chargeExpertise(const string texte) const;
+	Triangle * chargeExpertise(const string texte) const;
 
 };
 #endif

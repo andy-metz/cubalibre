@@ -21,7 +21,7 @@ class ChargementFormeCORCercle : public ChargementFormeCOR{
 public :
 	ChargementFormeCORCercle(ChargementFormeCOR * suivant);
 
-	Forme * chargeExpertise(const string texte) const;
+	Cercle * chargeExpertise(const string texte) const;
 	
 };
 #endif

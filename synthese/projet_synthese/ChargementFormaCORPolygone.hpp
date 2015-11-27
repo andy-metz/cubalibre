@@ -20,7 +20,7 @@ class ChargementFormeCORPolygone : public ChargementFormeCOR{
 public:
 	ChargementFormeCORPolygone(ChargementFormeCOR * suivant);
 
-	Forme * chargeExpertise(const string texte) const;
+	Polygone * chargeExpertise(const string texte) const;
 
 };
 #endif

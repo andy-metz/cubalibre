@@ -9,10 +9,10 @@ ChargementFormeCORPolygone::ChargementFormeCORPolygone(ChargementFormeCOR * suiv
 *	@param texte : la chaine à vérifier
 *	@return un Polygone construit par string
 */
-Forme * ChargementFormeCORPolygone::chargeExpertise(const string texte) const{
+Polygone * ChargementFormeCORPolygone::chargeExpertise(const string texte) const{
 	string string_to_extract;
 
-	int pos = texte.find("Polygone");
+	int pos = texte.find("polygone");
 	if ((pos == string::npos) || (pos>0))
 	{	return NULL;
 	}
