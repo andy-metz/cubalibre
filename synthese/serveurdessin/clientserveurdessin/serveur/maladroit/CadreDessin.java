@@ -1,4 +1,4 @@
-package clientserveurdessin.serveur.maladroit;
+ package clientserveurdessin.serveur.maladroit;
 
 import java.awt.Frame;
 import java.awt.Graphics;

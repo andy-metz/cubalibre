@@ -173,26 +173,3 @@ void ClientDessin::traceSegment(const int x1, const int y1, const int x2, const 
 
 	cout << "requête de tracé de segment envoyée" << endl;
 }
-
-/**
-envoie sur une seule ligne les 5 paramètres au serveur.
-* Les 5 paramètres fillOval, ... , hauteur sont au préalable encodés en 1 seule String. Les paramètres sont séparés par ", "
-*  * */
-void ClientDessin::remplitEllipse(const int bordGauche, const int bordHaut, const int largeur, const int hauteur)
-{
-	ostringstream oss;
-
-	oss << "fillOval" << ", " << bordGauche << ", " << bordHaut << ", " << largeur << ", " << hauteur << "\r\n";
-
-	string requete = oss.str();
-
-
-	//int l = strlen(requete);
-
-	int r = send(sock, requete.c_str(), requete.length(), 0);             //------------------ envoi de la requête au serveur -------------------------------
-
-	if (r == SOCKET_ERROR)
-		throw Erreur("échec de l'envoi de la requête de tracé de segment");
-
-	cout << "requête de tracé de segment envoyée" << endl;
-}
