@@ -64,7 +64,7 @@ using namespace std;
 class Vecteur2D
 {
     private:
-    double a[3];
+    double a[2];
 
     public:
     Vecteur2D(const double&x=0,const double&y=0);

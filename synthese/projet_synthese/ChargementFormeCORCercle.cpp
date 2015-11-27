@@ -12,7 +12,6 @@ ChargementFormeCORCercle::ChargementFormeCORCercle(ChargementFormeCOR * suivant)
 */
 Cercle * ChargementFormeCORCercle::chargeExpertise(const string texte) const{
 	string string_to_extract;
-	
 	int pos=texte.find("cercle");
 	if ((pos == string::npos) || (pos>0))
 	{	return NULL;
@@ -24,7 +23,6 @@ Cercle * ChargementFormeCORCercle::chargeExpertise(const string texte) const{
 		{	return NULL;
 		}
 		getline(file_to_open, string_to_extract);
-		Cercle C(string_to_extract);
-		return &C;
+		return new Cercle(string_to_extract);		
 	}
 }

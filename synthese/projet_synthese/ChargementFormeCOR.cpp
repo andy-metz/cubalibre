@@ -15,11 +15,12 @@ Forme * ChargementFormeCOR::charge(const string texte) const{
 	Forme * resultat;
 	resultat = this->chargeExpertise(texte);
 
-	if (resultat)
+	if (resultat!=NULL)
 	{	return resultat;}
 	else
-	{	if (this->suivant)
-		{	return this->suivant->chargeExpertise(texte);}
+	{	if (this->suivant!=NULL)
+		{
+		return (this->suivant->charge(texte));}
 		else
 		{	return NULL;}
 	}

@@ -22,7 +22,6 @@ Triangle * ChargementFormeCORTriangle::chargeExpertise(const string texte) const
 		{	return NULL;
 		}
 		getline(file_to_open, string_to_extract);
-		Triangle T(string_to_extract);
-		return &T;
+		return new Triangle(string_to_extract);
 	}
 }
