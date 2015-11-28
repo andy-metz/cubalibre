@@ -73,16 +73,6 @@ private:
 	virtual double calculerAire() const;
 };
 
-/**
-*   @class Groupe
-*   Permet de gérer un groupe de formes.
-*/
-class Groupe
-{
-    vector<Forme> groupe;
-
-};
-
 
 
 

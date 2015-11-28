@@ -104,7 +104,7 @@ void Segment::setB(const Vecteur2D &B){
 Segment::operator string()const
 {
     stringstream ss;
-    ss<<"Segment("<<a<<","<<b<<")"<<endl;
+    ss<<"Segment("<<a<<","<<b<<")";
     string s=ss.str();
     return s;
 }

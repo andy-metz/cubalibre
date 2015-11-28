@@ -13,7 +13,7 @@
 *
 *   @section DESCRIPTION
 *
-*   Classe ChargementFormeCORCercle pour définir un expert cercle du design pattern COR
+*   @class ChargementFormeCORCercle pour définir un expert cercle du design pattern COR
 *
 */
 class ChargementFormeCORCercle : public ChargementFormeCOR{

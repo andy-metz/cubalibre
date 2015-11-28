@@ -79,6 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Cercle.hpp" />
+    <ClInclude Include="ChargementFormeCORGroupe.hpp" />
     <ClInclude Include="ChargementFormeCORPolygone.hpp" />
     <ClInclude Include="ChargementForme.hpp" />
     <ClInclude Include="ChargementFormeCOR.hpp" />
@@ -90,6 +91,7 @@
     <ClInclude Include="erreur.h" />
     <ClInclude Include="Forme.hpp" />
     <ClInclude Include="FormeVisiteur.hpp" />
+    <ClInclude Include="Groupe.hpp" />
     <ClInclude Include="MaWinsock.h" />
     <ClInclude Include="Polygone.hpp" />
     <ClInclude Include="SauvegardeTxt.hPP" />
@@ -102,12 +104,14 @@
     <ClCompile Include="Cercle.cpp" />
     <ClCompile Include="ChargementFormeCOR.cpp" />
     <ClCompile Include="ChargementFormeCORCercle.cpp" />
+    <ClCompile Include="ChargementFormeCORGroupe.cpp" />
     <ClCompile Include="ChargementFormeCORPolygone.cpp" />
     <ClCompile Include="ChargementFormeCORSegment.cpp" />
     <ClCompile Include="ChargementFormeCORTriangle.cpp" />
     <ClCompile Include="ClientDessin.cpp" />
     <ClCompile Include="erreur.cpp" />
     <ClCompile Include="Forme.cpp" />
+    <ClCompile Include="Groupe.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MAWinsock.cpp" />
     <ClCompile Include="Polygone.cpp" />

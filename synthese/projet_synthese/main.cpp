@@ -6,13 +6,16 @@
 #include"ChargementFormeCORCercle.hpp"
 #include"ChargementFormeCORSegment.hpp"
 #include"ChargementFormeCORTriangle.hpp"
+#include"ChargementFormeCORGroupe.hpp"
 #include "Cercle.hpp"
 #include"Segment.hpp"
 #include"Triangle.hpp"
 #include"Polygone.hpp"
+#include"Groupe.hpp"
+
 
 #include"TransformerVisiteur.hpp"
-#include"OpenGLVisiteur.hpp"
+//#include"OpenGLVisiteur.hpp"
 
 #include "FormeVisiteur.hpp"
 #include"SauvegardeTxt.hPP"
@@ -37,40 +40,48 @@ int main(int argv, char**argc)
 	// dessin->dess_cercle(C)
 
 	SauvegardeTxt visitor;
-	ChargementFormeCOR *pol, *tri, *cer, *seg;
+	ChargementFormeCOR *pol, *tri, *cer, *seg,*grp;
 	pol = new ChargementFormeCORPolygone(NULL);
 	tri = new ChargementFormeCORTriangle(pol);
 	cer = new ChargementFormeCORCercle(tri);
 	seg = new ChargementFormeCORSegment(cer);
-	ChargementFormeCOR * chargeur = seg;
+	grp = new ChargementFormeCORGroupe(seg);
+	ChargementFormeCOR * chargeur = grp;
 
 	Cercle c("Cercle(rayon(10),centre(0.5,512.5))");
-	//cout << c << endl;
 	c.accept(&visitor);
 	Cercle * cercle_1=(Cercle*)chargeur->charge("cercle1.txt");
-//	cout <<*cercle_1 << endl;
+	cout <<*cercle_1 << endl;
 
 	Segment s("Segment((0.1,2),(3,4.5))");
-	//cout << s << endl;
 	s.accept(&visitor);
 	Segment * seg_2 = (Segment*)chargeur->charge("segment2.txt");
-	//cout << *seg_2 << endl;
+	cout << *seg_2 << endl;
 
 	Triangle t("Triangle:p1(1,1),p2(4,5),p3(3,7)");
-	//cout << t << endl;
 	t.accept(&visitor);
 	Triangle * tri_3 = (Triangle*)chargeur->charge("triangle3.txt");
-	//cout <<(Triangle) *tri_3 << endl;
+	cout <<*tri_3 << endl;
 
 	Polygone p("Polygone:p0(1,1),p1(2,3),p2(2,5),p3(1,6),p4(0,5),p5(0,3)");
-	cout << p << endl;
 	p.accept(&visitor);
 	Polygone * poly_4 = (Polygone*)chargeur->charge("polygone4.txt");
 	cout << *poly_4 << endl;
 
+	vector<Forme*> liste_F;
+	Groupe G = Groupe(liste_F); 
+	G.addForme(new Cercle("Cercle(rayon(10),centre(0.5,512.5))"));
+	G.addForme(new Polygone("Polygone:p0(1,1),p1(2,3),p2(2,5),p3(1,6),p4(0,5),p5(0,3)"));
+	G.addForme(new Triangle("Triangle:p1(1,1),p2(4,5),p3(3,7)"));
+	G.addForme(new Segment("Segment((0.1,2),(3,4.5))"));
+	cout << G << endl;
 
+	Groupe G1("Groupe:{Triangle:p1(1,1),p2(4,5),p3(3,7)},{Segment((0.1,2),(3,4.5))},{Cercle(rayon(10),centre(0.5,512.5))},{Polygone:p0(1,1),p1(2,3),p2(2,5),p3(1,6),p4(0,5),p5(0,3)}");
+	G1.accept(&visitor);
+	Groupe * grp_1 = (Groupe*)chargeur->charge("groupe1.txt");
+	cout << *grp_1 << endl;
 
-	try
+	/*try
 	{
 		string adresseServeur = "127.0.0.1";
 		int portServeurDessin = 8091;
@@ -99,7 +110,7 @@ int main(int argv, char**argc)
 	{
 		cerr << e << endl;
 	}
-
+	*/
 	system("pause");
 
 
@@ -122,7 +133,7 @@ int main(int argv, char**argc)
     *   Le main DOIT IMPERATIVEMENT CONTENIR ARGC ET ARGV, sinon ça ne marchera pas (SDL2).
     *
     *
-    */
+	*//*
     Cercle cc("Cercle(rayon(142),centre(0,0))");
     cc.setColor(GREEN);
     cout<<cc<<endl;
@@ -158,7 +169,7 @@ int main(int argv, char**argc)
     tt.accept(&glv);
     ss.accept(&glv);
     pp.accept(&glv);
-    glv.render();
+    glv.render();*/
 
     return 0;
 }

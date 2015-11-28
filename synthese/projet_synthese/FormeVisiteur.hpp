@@ -4,7 +4,7 @@
 
 /**
 *   @file    FormeVisiteur.hpp FormeVisiteur.cpp
-*   @author  Jérôme Lartillot Olivier Mertz Alain Erba
+*   @author  Jérôme Lartillot Olivier Mertz André Erba
 *   @version 1.0
 *
 *   @section REQUIREMENTS
@@ -38,7 +38,7 @@ public:
 	virtual  void visit(Polygone * Forme) = 0;
 	virtual  void visit(Segment * Forme) = 0;
 	virtual  void visit(Cercle * Forme) = 0;
-	/*virtual  Forme * visite(const Groupe * Forme) = 0;*/
+	virtual  void visit(Groupe * Forme) = 0;
 
 };
 #endif
