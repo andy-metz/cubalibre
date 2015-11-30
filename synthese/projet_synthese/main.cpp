@@ -95,10 +95,10 @@ int main(int argv, char**argc)
 
 		string titre = "fenêtre ouverte par un client C++ distant";
 
-		int bordGauche = 300;
-		int bordHaut = 400;
+		int bordGauche = 100;
+		int bordHaut = 100;
 		int largeur = 800;
-		int hauteur = 800;
+		int hauteur = 600;
 
 		clientDessin.ouvreFenetreGraphique(titre, bordGauche, bordHaut, largeur, hauteur);
 
@@ -108,7 +108,8 @@ int main(int argv, char**argc)
 		int y2 = 500;
 
 		//clientDessin.traceSegment(x1, y1, x2, y2);
-		s.accept(&clientDessin);
+		//s.accept(&clientDessin);
+		p.accept(&clientDessin);
 
 	}
 	catch (Erreur e)

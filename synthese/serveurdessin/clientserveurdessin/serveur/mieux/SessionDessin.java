@@ -84,6 +84,9 @@ public void run()
 		BufferStrategy bf= frame.getBufferStrategy();
 		
 		long time;
+		
+		ChargementPolygoneCOR cor= new ChargementPolygoneCOR();
+		
 
 	    while (true)
         {
@@ -94,6 +97,13 @@ public void run()
 			graphics.fillRect(Ox,Oy,largeur,hauteur);
 			
 			time=System.currentTimeMillis();
+			
+			try {
+				cor.expertise(requete, graphics);
+			} catch (DessinException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 			//requete = this.fluxEntrant.readLine();  // lit l'instruction de tracé et les 4 paramètres entiers du tracé, les arguments sont séparés par des ","
 			

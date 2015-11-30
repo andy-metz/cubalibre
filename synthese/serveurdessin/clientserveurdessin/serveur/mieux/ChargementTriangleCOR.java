@@ -16,7 +16,7 @@ public class ChargementTriangleCOR extends ChargementFormeCOR {
 	 */
 	@Override
 	public void expertise(String s, Graphics g) throws DessinException {
-		// TODO Auto-generated method stub
+		
 
 	}
 
