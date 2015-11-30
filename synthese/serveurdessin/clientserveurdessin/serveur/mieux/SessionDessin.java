@@ -63,29 +63,13 @@ try
         requête = this.fluxEntrant.readLine();  // lit l'instruction de tracé et les 4 paramètres entiers du tracé, les arguments sont séparés par des ","
         
         System.out.println("requête reçue : " + requête);
-        arguments = requête.split(",");                     // redondance de code à éliminer
-    
-        String opération;
-        int x1, y1, x2, y2;
-    
-        opération = arguments[0].trim();
-        x1 = Integer.parseInt(arguments[1].trim());
-        y1 = Integer.parseInt(arguments[2].trim());
-        x2 = Integer.parseInt(arguments[3].trim());
-        y2 = Integer.parseInt(arguments[4].trim());
-    
-        if (opération.equalsIgnoreCase("drawLine")) {            // if-else à éliminer par l'utilisation du Design Pattern "Chain Of Responsibility" 
-            cadreDessin.graphics.drawLine(x1,y1,x2,y2);
-        System.out.println("coordonnées: "+Integer.toString(x1)+Integer.toString(y1)+Integer.toString(x2)+Integer.toString(y2));
-        }
-        else
-            if (opération.equalsIgnoreCase("fillOval"))
-                cadreDessin.graphics.fillOval(x1,y1,x2,y2);
-               
-            else
-                {
-                /* Opération non reconnue, on ne fait rien */
-                }
+
+        
+        ChargementFormeCOR chargeur = new ChargementFormeCOR();
+        ChargementSegmentCOR seg = new  ChargementSegmentCOR();
+        chargeur.setSuivant(seg);
+        
+
         cadreDessin.getBufferStrategy().show();
         } // while
     }

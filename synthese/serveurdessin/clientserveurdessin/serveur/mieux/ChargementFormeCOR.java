@@ -18,7 +18,9 @@ import java.awt.Graphics;
 public abstract class ChargementFormeCOR {
 	ChargementFormeCOR suivant;
 	
-	
+	public ChargementFormeCOR(){
+		suivant = null;
+	}
 	public abstract void expertise(String s,Graphics g)throws DessinException;
 	
 	/**

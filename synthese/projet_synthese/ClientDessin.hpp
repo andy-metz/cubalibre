@@ -24,6 +24,7 @@
 #include"Polygone.hpp"
 #include"Segment.hpp"
 #include"Triangle.hpp"
+#include"Groupe.hpp"
 
 using namespace std;
 
@@ -56,6 +57,7 @@ public:
 	void visit( Polygone * polygone);
 	void visit( Segment * segment);
 	void visit( Cercle * cercle);
+	void visit(Groupe * groupe);
 
 	void ouvreFenetreGraphique(const string & titre, const int bordGauche, const int bordHaut, const int largeur, const int hauteur);
 

@@ -81,6 +81,16 @@ int main(int argv, char**argc)
 	Groupe * grp_1 = (Groupe*)chargeur->charge("groupe1.txt");
 	cout << *grp_1 << endl;
 
+
+	/*
+TEST	
+	*/
+	string adresseServeur = "127.0.0.1";
+	int portServeurDessin = 8091;
+
+	ClientDessin ClientDessin(adresseServeur, portServeurDessin);
+
+	string titre = "fenêtre ouverte par un client C++ distant";
 	/*try
 	{
 		string adresseServeur = "127.0.0.1";

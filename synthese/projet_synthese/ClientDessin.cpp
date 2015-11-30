@@ -128,6 +128,15 @@ void ClientDessin::visit( Cercle * cercle)
     envoyer((Cercle)*cercle);
 }
 
+/**
+*   Envoie un cercle au serveur pour qu'il soit dessiné.
+*   @param cercle le cercle à dessiner.
+*/
+void ClientDessin::visit(Groupe * groupe)
+{
+	envoyer((Groupe)*groupe);
+}
+
 // il y a une GROSSE redondance de code (ou autrement dit un GROS copié-collé pourri) sur les 3 méthodes suivantes : elle doit être éliminée !!!!!!!
 // cf. classe JAVA ClientDessin - méthode encoder()
 // De Jérôme: oui il faut facoriser ça avec une fonction privée qui envoi.
