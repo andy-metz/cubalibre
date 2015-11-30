@@ -11,7 +11,7 @@ ChargementFormeCORGroupe::ChargementFormeCORGroupe(ChargementFormeCOR * suivant)
 */
 Groupe * ChargementFormeCORGroupe::chargeExpertise(const string texte) const{
 	string string_to_extract;
-	int pos = texte.find("Groupe");
+	int pos = texte.find("groupe");
 	if ((pos == string::npos) || (pos>0))
 	{
 		return NULL;

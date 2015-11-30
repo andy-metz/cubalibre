@@ -15,7 +15,7 @@ import java.net.UnknownHostException;
  * tracer une ellipse pleine
  * 
  * protocole : Chaque requête est codée sous forme d'une seule String se terminant par le caractère fin de ligne.
- * Sur la ligne, 2 paramètres consécutifs sont séparés par ", ".  
+ * Sur la ligne, 2 paramètres consécutifs sont séparés par ", ".
  * 
  * */
 public class ClientDessin

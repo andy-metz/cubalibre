@@ -45,7 +45,7 @@ Groupe::Groupe(const string &s){
 		if (s[i] == '}')
 		fo_count = fo_count + 1;
 	}
-	
+
 	for (int i = 0; i < fo_count; i++)
 	{
 		pos = s.find('{',pos+1);// on arrive sur une forme
@@ -103,7 +103,7 @@ void Groupe::addForme(Forme *F){
 }
 /**
 *	Méthode accept qui permet de se faire visiter par un FormeVisiteur
-*	@param fv : la classe dérivée de forme visiteur 
+*	@param fv : la classe dérivée de forme visiteur
 *	implémentant la fonctionnalité souhaitée
 */
 void Groupe::accept(FormeVisiteur *fv)
@@ -117,11 +117,11 @@ double Groupe::calculerAire()const{
 	double area=0;
 	string s_type;
 	for (int i = 0; i < liste_forme.size(); i++)
-	{	
+	{
 		s_type = (typeid(*liste_forme[i]).name());
 		if (s_type == typeid(Cercle).name())
 		{
-			Cercle* C = dynamic_cast<Cercle *> (liste_forme[i]);	
+			Cercle* C = dynamic_cast<Cercle *> (liste_forme[i]);
 			area=area+C->calculerAire();
 		}
 		if (s_type == typeid(Triangle).name())
@@ -150,8 +150,10 @@ Groupe::operator string()const{
 	stringstream ss;
 	ss << "Groupe:";
 	string s_type;
-	
- 	for (int i = 0; i<liste_forme.size(); i++)
+
+ 	for (int i = 0;
+ 	i<liste_forme.size();
+ 	 i++)
 	{
 		s_type=(typeid(*liste_forme[i]).name());
 		if (s_type == typeid(Cercle).name())
@@ -177,7 +179,7 @@ Groupe::operator string()const{
 			Polygone* P = dynamic_cast<Polygone*>(liste_forme[i]);
 			ss << "{" << *P << "}";
 			ss << ",";
-		}		
+		}
 	}
 	ss << "end";
 	string s= ss.str();

@@ -69,7 +69,7 @@ int main(int argv, char**argc)
 	cout << *poly_4 << endl;
 
 	vector<Forme*> liste_F;
-	Groupe G = Groupe(liste_F); 
+	Groupe G = Groupe(liste_F);
 	G.addForme(new Cercle("Cercle(rayon(10),centre(0.5,512.5))"));
 	G.addForme(new Polygone("Polygone:p0(1,1),p1(2,3),p2(2,5),p3(1,6),p4(0,5),p5(0,3)"));
 	G.addForme(new Triangle("Triangle:p1(1,1),p2(4,5),p3(3,7)"));
@@ -79,19 +79,14 @@ int main(int argv, char**argc)
 	Groupe G1("Groupe:{Triangle:p1(1,1),p2(4,5),p3(3,7)},{Segment((0.1,2),(3,4.5))},{Cercle(rayon(10),centre(0.5,512.5))},{Polygone:p0(1,1),p1(2,3),p2(2,5),p3(1,6),p4(0,5),p5(0,3)}");
 	G1.accept(&visitor);
 	Groupe * grp_1 = (Groupe*)chargeur->charge("groupe1.txt");
-	cout << *grp_1 << endl;
+	if(grp_1!=NULL)
+        cout << (string)(*grp_1) << endl;
 
 
-	/*
-TEST	
-	*/
-	string adresseServeur = "127.0.0.1";
-	int portServeurDessin = 8091;
 
-	ClientDessin ClientDessin(adresseServeur, portServeurDessin);
 
 	string titre = "fenêtre ouverte par un client C++ distant";
-	/*try
+	try
 	{
 		string adresseServeur = "127.0.0.1";
 		int portServeurDessin = 8091;
@@ -112,7 +107,7 @@ TEST
 		int x2 = 500;
 		int y2 = 500;
 
-		clientDessin.traceSegment(x1, y1, x2, y2);
+		//clientDessin.traceSegment(x1, y1, x2, y2);
 		s.accept(&clientDessin);
 
 	}
@@ -120,7 +115,6 @@ TEST
 	{
 		cerr << e << endl;
 	}
-	*/
 	system("pause");
 
 

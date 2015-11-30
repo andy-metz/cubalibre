@@ -6,6 +6,7 @@
 #include "Segment.hpp"
 #include "Triangle.hpp"
 #include "Polygone.hpp"
+#include <typeinfo>
 
 using namespace std;
 
