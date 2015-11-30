@@ -48,12 +48,19 @@ public void run()
 	
 	try
     {
-	    requete = this.fluxEntrant.readLine();  // lit le titre et les 4 coordonnées Ox, Oy, largeur et hauteur de la fenêtre, les arguments sont séparés par des ","
+	    requete = this.fluxEntrant.readLine();  
 	    System.out.println("requete reçue : " + requete);
-	    String arguments[] = requete.split(",");            // redondance de code à éliminer
+	    String arguments[] = requete.split(",");            //  Prépare la fenêtre d'affichage
 	    
-	    requete = this.fluxEntrant.readLine();
-		System.out.println("requete reçue : " + requete);
+	    //requete = this.fluxEntrant.readLine();
+		//System.out.println("requete reçue : " + requete);
+		
+		//
+		
+		ChargementSegmentCOR chargeursegment = new ChargementSegmentCOR();
+
+		
+		
 	    
 	    String titre;
 	    int Ox, Oy, largeur, hauteur;
@@ -79,33 +86,45 @@ public void run()
 		frame.setBounds(Ox,Oy,largeur,hauteur);
 		frame.setVisible(true);
 		frame.setIgnoreRepaint(true);
-		frame.createBufferStrategy(2);
-	    
+		frame.createBufferStrategy(1);
+	    Thread.sleep(150);
 		BufferStrategy bf= frame.getBufferStrategy();
-		
+		Graphics graphics=bf.getDrawGraphics();
 		long time;
 
 	    while (true)
         {
 	    	bf=frame.getBufferStrategy();
-			Graphics graphics=bf.getDrawGraphics();
-			graphics.clearRect(Ox,Oy,largeur,hauteur);
-			graphics.setColor(Color.blue);
-			graphics.fillRect(Ox,Oy,largeur,hauteur);
+			//Graphics graphics=bf.getDrawGraphics();
+			//graphics.clearRect(Ox,Oy,largeur,hauteur);
+			//graphics.setColor(Color.blue);
+			//graphics.fillRect(Ox,Oy,largeur,hauteur);
 			
-			time=System.currentTimeMillis();
+			//time=System.currentTimeMillis();
+		
 			
-			//requete = this.fluxEntrant.readLine();  // lit l'instruction de tracé et les 4 paramètres entiers du tracé, les arguments sont séparés par des ","
-			
+			requete = this.fluxEntrant.readLine();  // lit l'instruction de tracé et les 4 paramètres entiers du tracé, les arguments sont séparés par des ","
+		
 			//System.out.println("requete reçue : " + requete);
-        
-
-			
-			
-			Thread.sleep(5);
-			
-			bf.show();
-			graphics.dispose();
+			if(requete != null)
+			{
+				System.out.println("requete reçue : " + requete);	
+				try 
+				{
+					chargeursegment.dessiner(requete, graphics); // COR
+				} 
+				catch (DessinException e) 
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+				Thread.sleep(5);
+				
+				bf.show();
+				graphics.dispose();
+			}
         } // while
     }
 	
