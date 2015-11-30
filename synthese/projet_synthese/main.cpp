@@ -53,7 +53,7 @@ int main(int argv, char**argc)
 	Cercle * cercle_1=(Cercle*)chargeur->charge("cercle1.txt");
 	cout <<*cercle_1 << endl;
 
-	Segment s("Segment((0.1,2),(300,400.5))");
+	Segment s("Segment((0.1,2),(3,4.5))");
 	s.accept(&visitor);
 	Segment * seg_2 = (Segment*)chargeur->charge("segment2.txt");
 	cout << *seg_2 << endl;
@@ -95,10 +95,10 @@ int main(int argv, char**argc)
 
 		string titre = "fenêtre ouverte par un client C++ distant";
 
-		int bordGauche = 0;
-		int bordHaut = 0;
-		int largeur = 400;
-		int hauteur = 400;
+		int bordGauche = 100;
+		int bordHaut = 100;
+		int largeur = 800;
+		int hauteur = 600;
 
 		clientDessin.ouvreFenetreGraphique(titre, bordGauche, bordHaut, largeur, hauteur);
 
@@ -108,14 +108,8 @@ int main(int argv, char**argc)
 		int y2 = 500;
 
 		//clientDessin.traceSegment(x1, y1, x2, y2);
-		s.accept(&clientDessin);
-
-		// essai trace segment
-		cout << *seg_2 << endl;
-
-		Segment s2("Segment((50,2),(40,125.5))");
-		s2.accept(&visitor);
-		cout << s2 << endl;
+		//s.accept(&clientDessin);
+		p.accept(&clientDessin);
 
 	}
 	catch (Erreur e)
