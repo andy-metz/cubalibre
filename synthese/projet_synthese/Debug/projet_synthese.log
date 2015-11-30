@@ -1,20 +1,20 @@
-﻿Build started 27/11/2015 17:44:45.
+﻿Build started 28/11/2015 19:14:28.
      1>Project "C:\Users\MERTZ\git\Git\cubalibre\synthese\projet_synthese\projet_synthese.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Polygone.cpp
-         Polygone.cpp
-     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\polygone.cpp(24): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\polygone.cpp(116): warning C4018: '<' : signed/unsigned mismatch
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ChargementFormeCORGroupe.cpp
+         ChargementFormeCORGroupe.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MERTZ\git\Git\cubalibre\synthese\projet_synthese\Debug\projet_synthese.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\MERTZ\git\Git\cubalibre\synthese\projet_synthese\Debug\projet_synthese.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MERTZ\git\Git\cubalibre\synthese\projet_synthese\Debug\projet_synthese.lib" /MACHINE:X86 Debug\Cercle.obj
          Debug\ChargementFormeCOR.obj
          Debug\ChargementFormeCORCercle.obj
+         Debug\ChargementFormeCORGroupe.obj
          Debug\ChargementFormeCORPolygone.obj
          Debug\ChargementFormeCORSegment.obj
          Debug\ChargementFormeCORTriangle.obj
          Debug\ClientDessin.obj
          Debug\erreur.obj
          Debug\Forme.obj
+         Debug\Groupe.obj
          Debug\main.obj
          Debug\MAWinsock.obj
          Debug\Polygone.obj
@@ -28,4 +28,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.28
+Time Elapsed 00:00:02.32

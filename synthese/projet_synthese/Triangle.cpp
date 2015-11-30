@@ -40,11 +40,11 @@ Triangle::Triangle(const Triangle &T):Forme(T),p1(T.p1),p2(T.p2),p3(T.p3)
 /**
 *	Constructeur par string de la classe Triangle
 *	@param s: la string qui permet de construire le triangle
-*	format:"triangle:p1(x1,y1),p2(x2,y2),p3(x3,y3)"
+*	format:"Triangle:p1(x1,y1),p2(x2,y2),p3(x3,y3)"
 */
 Triangle::Triangle(const string &s){
 
-	int triPos = s.find("triangle:");
+	int triPos = s.find("Triangle:");
 	if (triPos == string::npos)
 		cout << "error" << endl;
 
@@ -157,7 +157,7 @@ double Triangle::calculerAire() const{
 Triangle::operator string()const
 {
 	stringstream ss;
-	ss << "triangle:p1"<<p1<<",p2"<<p2<<",p3"<<p3;
+	ss << "Triangle:p1"<<p1<<",p2"<<p2<<",p3"<<p3;
 	string s = ss.str();
 	return s;
 }

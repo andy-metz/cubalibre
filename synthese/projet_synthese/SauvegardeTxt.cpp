@@ -7,6 +7,27 @@
 void SauvegardeTxt::setCompteur() {
 	SauvegardeTxt::x++;
 }
+/**
+*	Methode de sauvegarde du groupe
+*	@param G le groupe à enregistrer
+*/
+void::SauvegardeTxt::visit(Groupe *G){
+	setCompteur();
+	stringstream ss;
+	ss << x;
+	string xs = ss.str();
+	ofstream file_to_save("groupe" + xs + ".txt", ios::out);
+	if (!file_to_save)
+	{
+		cerr << "Erreur a l'ouverture du fichier" << endl;
+		system("pause");
+		exit(1);
+		//throw exception
+	}
+	file_to_save << (Groupe)* G << endl;
+	file_to_save.close();
+}
+
 /*
 *	Methode de sauvegarde du cercle
 *	@param C le cercle à enregistrer

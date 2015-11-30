@@ -4,7 +4,7 @@
 
 /**
 *   @file    Triangle.hpp Triangle.cpp
-*   @author  Jérôme Lartillot Olivier Mertz Alain Erba
+*   @author  Jérôme Lartillot Olivier Mertz André Erba
 *   @version 1.0
 *
 *   @section REQUIREMENTS

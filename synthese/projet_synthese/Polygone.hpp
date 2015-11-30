@@ -4,7 +4,7 @@
 
 /**
 *   @file    Polygone.hpp Polygone.cpp
-*   @author  Jérôme Lartillot Olivier Mertz Alain Erba
+*   @author  Jérôme Lartillot Olivier Mertz André Erba
 *   @version 1.0
 *
 *   @section REQUIREMENTS
@@ -16,7 +16,8 @@
 *
 *   @section DESCRIPTION
 *
-*   Classe Polygone pour représenter un polygone en 2D.
+*   @class Polygone
+*	Classe pour représenter un polygone en 2D.
 *
 */
 

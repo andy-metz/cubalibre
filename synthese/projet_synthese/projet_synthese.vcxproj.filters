@@ -72,6 +72,12 @@
     <ClInclude Include="ChargementFormeCORPolygone.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Groupe.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChargementFormeCORGroupe.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cercle.cpp">
@@ -123,6 +129,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ChargementFormeCORPolygone.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Groupe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChargementFormeCORGroupe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
