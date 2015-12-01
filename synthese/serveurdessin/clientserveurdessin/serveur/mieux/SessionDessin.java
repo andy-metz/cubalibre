@@ -48,12 +48,19 @@ public void run()
 	
 	try
     {
-	    requete = this.fluxEntrant.readLine();  // lit le titre et les 4 coordonnées Ox, Oy, largeur et hauteur de la fenêtre, les arguments sont séparés par des ","
+	    requete = this.fluxEntrant.readLine();  
 	    System.out.println("requete reçue : " + requete);
-	    String arguments[] = requete.split(",");            // redondance de code à éliminer
+	    String arguments[] = requete.split(",");            //  Prépare la fenêtre d'affichage
 	    
-	    requete = this.fluxEntrant.readLine();
-		System.out.println("requete reçue : " + requete);
+	    //requete = this.fluxEntrant.readLine();
+		//System.out.println("requete reçue : " + requete);
+		
+		//
+		
+		ChargementSegmentCOR chargeursegment = new ChargementSegmentCOR();
+
+		
+		
 	    
 	    String titre;
 	    int Ox, Oy, largeur, hauteur;
@@ -79,11 +86,12 @@ public void run()
 		frame.setBounds(Ox,Oy,largeur,hauteur);
 		frame.setVisible(true);
 		frame.setIgnoreRepaint(true);
-		frame.createBufferStrategy(2);
-	    
+		frame.createBufferStrategy(1);
+	    Thread.sleep(150);
 		BufferStrategy bf= frame.getBufferStrategy();
-		
+		Graphics graphics=bf.getDrawGraphics();
 		long time;
+
 		
 		ChargementPolygoneCOR cor= new ChargementPolygoneCOR();
 		ChargementSegmentCOR seg = new ChargementSegmentCOR();
@@ -95,31 +103,65 @@ public void run()
 		seg.setSuivant(tri);
 		cor.setSuivant(seg);
 
+
 	    while (true)
         {
 	    	bf=frame.getBufferStrategy();
-			Graphics graphics=bf.getDrawGraphics();
-			graphics.clearRect(Ox,Oy,largeur,hauteur);
-			graphics.setColor(Color.GRAY);
-			graphics.fillRect(Ox,Oy,largeur,hauteur);
+
+			Graphics graphics1=bf.getDrawGraphics();
+			graphics1.clearRect(Ox,Oy,largeur,hauteur);
+			graphics1.setColor(Color.GRAY);
+			graphics1.fillRect(Ox,Oy,largeur,hauteur);
 			
 			time=System.currentTimeMillis();
 			
 			try {
-				cor.dessiner(requete, graphics);
+				cor.dessiner(requete, graphics1);
 			} catch (DessinException e) {
 				
 				e.printStackTrace();
 			}
 			
 			//requete = this.fluxEntrant.readLine();  // lit l'instruction de tracé et les 4 paramètres entiers du tracé, les arguments sont séparés par des ","
+
+			//Graphics graphics=bf.getDrawGraphics();
+			//graphics.clearRect(Ox,Oy,largeur,hauteur);
+			//graphics.setColor(Color.blue);
+			//graphics.fillRect(Ox,Oy,largeur,hauteur);
 			
+			//time=System.currentTimeMillis();
+		
+
+			
+			requete = this.fluxEntrant.readLine();  // lit l'instruction de tracé et les 4 paramètres entiers du tracé, les arguments sont séparés par des ","
+		
 			//System.out.println("requete reçue : " + requete);
+
         
 			Thread.sleep(5);
 			
 			bf.show();
-			graphics.dispose();
+			graphics1.dispose();
+
+			if(requete != null)
+			{
+				System.out.println("requete reçue : " + requete);	
+				try 
+				{
+					chargeursegment.dessiner(requete, graphics1); // COR
+				} 
+				catch (DessinException e) 
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+				Thread.sleep(5);
+				
+				bf.show();
+				graphics1.dispose();
+			}
         } // while
     }
 	
