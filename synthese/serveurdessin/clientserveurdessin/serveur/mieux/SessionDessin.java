@@ -109,9 +109,11 @@ public void run()
 			graphics1.clearRect(Ox,Oy,largeur,hauteur);
 			graphics1.setColor(Color.GRAY);
 			graphics1.fillRect(Ox,Oy,largeur,hauteur);
+			graphics1.translate(largeur/2, hauteur/2);
 			
 			time=System.currentTimeMillis();
-			
+			graphics1.setColor(Color.RED);
+			graphics1.drawLine(0, 0, 500, -500);
 			try {
 				cor.dessiner(requete, graphics1);
 			} catch (DessinException e) {
@@ -140,7 +142,7 @@ public void run()
 			bf.show();
 			graphics1.dispose();
 
-			if(requete != null)
+			/*if(requete != null)
 			{
 				System.out.println("requete reçue : " + requete);	
 				try 
@@ -158,7 +160,7 @@ public void run()
 				
 				bf.show();
 				graphics1.dispose();
-			}
+			}*/
         } // while
     }
 	

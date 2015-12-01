@@ -3,6 +3,7 @@
  */
 package clientserveurdessin.serveur.mieux;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import java.util.ArrayList;
@@ -42,12 +43,19 @@ public class ChargementSegmentCOR extends ChargementFormeCOR{
 			vect_courant=s.substring(posParntheseOuvrante,posParentheseFermante);
 			readPoint(vect_courant,pointList);
 		}
-		int sz=pointList.size();
+		
+		g.setColor(Color.BLUE);
+		g.drawLine(pointList.get(0), pointList.get(1), pointList.get(2), pointList.get(3));
+		System.out.println(Integer.toString(pointList.get(0)));
+		System.out.println(Integer.toString(pointList.get(1)));
+		System.out.println(Integer.toString(pointList.get(2)));
+		System.out.println(Integer.toString(pointList.get(3)));
+		/*int sz=pointList.size();
 		for(int i=0;i<sz;i+=2)
 		{
 			g.drawLine(pointList.get(i), pointList.get(i+1),
 						pointList.get(i+3<sz?i+3:i+3-sz), pointList.get(i+4<sz?i+3:i+4-sz));
-		}
+		}*/
 	}
 
 

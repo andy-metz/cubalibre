@@ -53,7 +53,7 @@ int main(int argv, char**argc)
 	Cercle * cercle_1=(Cercle*)chargeur->charge("cercle1.txt");
 	cout <<*cercle_1 << endl;
 
-	Segment s("Segment((0.1,2),(3,4.5))");
+	Segment s("Segment((0,0),(9,9))");
 	s.accept(&visitor);
 	Segment * seg_2 = (Segment*)chargeur->charge("segment2.txt");
 	cout << *seg_2 << endl;
@@ -107,8 +107,8 @@ int main(int argv, char**argc)
 		int y2 = 500;
 
 		//clientDessin.traceSegment(x1, y1, x2, y2);
-		//s.accept(&clientDessin);
-		G.accept(&clientDessin);
+		s.accept(&clientDessin);
+		//G.accept(&clientDessin);
 
 	}
 	catch (Erreur e)

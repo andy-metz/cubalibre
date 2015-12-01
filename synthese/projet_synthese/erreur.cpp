@@ -8,7 +8,7 @@ using namespace std;
 /**
 *	Destructeur de la classe Erreur
 */
-Erreur::~Erreur(){
+Erreur::~Erreur()throw(){
 
 }
 /**
@@ -18,7 +18,7 @@ Erreur::~Erreur(){
 Erreur::Erreur(string const& phrase) throw() :info_message(info_message){}
 
 /**
-*	Operateur de string pour la classe erreur. 
+*	Operateur de string pour la classe erreur.
 *	Permet d'afficher le messaged'erreur dans un flux
 *   @param stream : le flux dans lequelle on doit envoyer le message d'erreur
 *	@param e : L'erreur qui être transmise dans le flux
