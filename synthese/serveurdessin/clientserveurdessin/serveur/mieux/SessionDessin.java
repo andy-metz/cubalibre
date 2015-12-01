@@ -86,22 +86,29 @@ public void run()
 		long time;
 		
 		ChargementPolygoneCOR cor= new ChargementPolygoneCOR();
-		
+		ChargementSegmentCOR seg = new ChargementSegmentCOR();
+		ChargementTriangleCOR tri= new ChargementTriangleCOR();
+		ChargementCercleCOR cer =new ChargementCercleCOR();
+		ChargementGroupeCOR grp = new ChargementGroupeCOR();
+		cer.setSuivant(grp);
+		tri.setSuivant(cer);
+		seg.setSuivant(tri);
+		cor.setSuivant(seg);
 
 	    while (true)
         {
 	    	bf=frame.getBufferStrategy();
 			Graphics graphics=bf.getDrawGraphics();
 			graphics.clearRect(Ox,Oy,largeur,hauteur);
-			graphics.setColor(Color.blue);
+			graphics.setColor(Color.GRAY);
 			graphics.fillRect(Ox,Oy,largeur,hauteur);
 			
 			time=System.currentTimeMillis();
 			
 			try {
-				cor.expertise(requete, graphics);
+				cor.dessiner(requete, graphics);
 			} catch (DessinException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 			
@@ -109,9 +116,6 @@ public void run()
 			
 			//System.out.println("requete reçue : " + requete);
         
-
-			
-			
 			Thread.sleep(5);
 			
 			bf.show();

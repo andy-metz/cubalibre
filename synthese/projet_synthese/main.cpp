@@ -79,8 +79,7 @@ int main(int argv, char**argc)
 	Groupe G1("Groupe:{Triangle:p1(1,1),p2(4,5),p3(3,7)},{Segment((0.1,2),(3,4.5))},{Cercle(rayon(10),centre(0.5,512.5))},{Polygone:p0(1,1),p1(2,3),p2(2,5),p3(1,6),p4(0,5),p5(0,3)}");
 	G1.accept(&visitor);
 	Groupe * grp_1 = (Groupe*)chargeur->charge("groupe1.txt");
-	if(grp_1!=NULL)
-        cout << (string)(*grp_1) << endl;
+     cout << (string)(*grp_1) << endl;
 
 
 
@@ -109,7 +108,7 @@ int main(int argv, char**argc)
 
 		//clientDessin.traceSegment(x1, y1, x2, y2);
 		//s.accept(&clientDessin);
-		p.accept(&clientDessin);
+		G.accept(&clientDessin);
 
 	}
 	catch (Erreur e)
