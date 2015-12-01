@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 /**
- * @author Jérôme
+ * @author Jérôme Olivier andré
  *
  */
 public class ChargementCercleCOR extends ChargementFormeCOR{

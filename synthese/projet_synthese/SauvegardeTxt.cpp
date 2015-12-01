@@ -19,10 +19,9 @@ void::SauvegardeTxt::visit(Groupe *G){
 	ofstream file_to_save("groupe" + xs + ".txt", ios::out);
 	if (!file_to_save)
 	{
-		cerr << "Erreur a l'ouverture du fichier" << endl;
+		throw Erreur("Erreur a la creation du fichier ");
 		system("pause");
 		exit(1);
-		//throw exception
 	}
 	file_to_save << (Groupe)* G << endl;
 	file_to_save.close();
@@ -41,10 +40,10 @@ void SauvegardeTxt::visit(Cercle * C){
 	ofstream file_to_save("cercle" + xs + ".txt", ios::out);
 	if (!file_to_save)
 	{
-		cerr << "Erreur a l'ouverture du fichier" << endl;
+		throw Erreur("Erreur a la creation du fichier ");
 		system("pause");
 		exit(1);
-		//throw exception
+		
 	}
 
 	file_to_save << (Cercle)* C << endl;
@@ -62,10 +61,9 @@ void SauvegardeTxt::visit(Triangle* T){
 	ofstream file_to_save("triangle" + xs + ".txt", ios::out);
 	if (!file_to_save)
 	{
-		cerr << "Erreur a l'ouverture du fichier" << endl;
+		throw Erreur("Erreur a la creation du fichier ");
 		system("pause");
 		exit(1);
-		//throw exception
 	}
 
 	file_to_save << (Triangle)* T << endl;
@@ -83,10 +81,9 @@ void SauvegardeTxt::visit(Segment * S){
 	ofstream file_to_save("segment" + xs + ".txt", ios::out);
 	if (!file_to_save)
 	{
-		cerr << "Erreur a l'ouverture du fichier" << endl;
+		throw Erreur("Erreur a la creation du fichier ");
 		system("pause");
 		exit(1);
-		//throw exception
 	}
 
 	file_to_save << (Segment)* S << endl;
@@ -104,10 +101,9 @@ void SauvegardeTxt::visit(Polygone *P){
 	ofstream file_to_save("polygone" + xs + ".txt", ios::out);
 	if (!file_to_save)
 	{
-		cerr << "Erreur a l'ouverture du fichier" << endl;
+		throw Erreur("Erreur a la creation du fichier ");
 		system("pause");
 		exit(1);
-		//throw exception
 	}
 
 	file_to_save << (Polygone)* P << endl;

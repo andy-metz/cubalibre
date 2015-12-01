@@ -19,7 +19,7 @@
 
 #include "FormeVisiteur.hpp"
 #include"SauvegardeTxt.hPP"
-#include "erreur.h"
+#include "Erreur.hpp"
 #include "ClientDessin.hpp"
 
 

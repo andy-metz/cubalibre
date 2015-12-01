@@ -51,9 +51,6 @@
     <ClInclude Include="MaWinsock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="erreur.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ChargementForme.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -76,6 +73,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ChargementFormeCORGroupe.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Erreur.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

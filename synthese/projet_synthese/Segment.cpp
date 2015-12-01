@@ -27,15 +27,15 @@ Segment::Segment(const string&s)
 {
     int segPos=s.find("Segment(");
     if(segPos==string::npos)
-        cout<<"segPos"<<endl;// TODO throw exception
+		throw Erreur("La chaine n'est pas bien formaté");
     int vpos=s.find(",",segPos);
-    vpos=s.find(",",vpos+1); // La 1ere virgule fait partie du vecteur et parasite.
+    vpos=s.find(",",vpos+1); 
     if(vpos==string::npos)
-        cout<<"vpos"<<endl;// TODO throw exception
+		throw Erreur("La chaine n'est pas bien formaté");
     int segFin=s.find(")");
     segFin=s.find(")",segFin+1);
     if(segFin==string::npos)
-        cout<<"segFin"<<endl;// TODO throw exception
+		throw Erreur("La chaine n'est pas bien formaté");
     string p1=s.substr(segPos+8,vpos-segPos-8);
     string p2=s.substr(vpos+1,segFin-vpos);
     Vecteur2D v1(p1),v2(p2);

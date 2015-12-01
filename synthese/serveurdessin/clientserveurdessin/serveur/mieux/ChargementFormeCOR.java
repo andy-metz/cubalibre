@@ -6,7 +6,10 @@ package clientserveurdessin.serveur.mieux;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-
+/**
+ * @author Jérôme Olivier andré
+ *
+ */
 public abstract class ChargementFormeCOR {
 	ChargementFormeCOR suivant;
 	
@@ -14,7 +17,7 @@ public abstract class ChargementFormeCOR {
 		suivant = null;
 	}
 	/**
-	 * 
+	 * 	Methode abstraite, à implémenter dans les class qui dérive de chargementFormeCOR
 	 * @param s String a parser pour déterminer si le cas est traté par le COR
 	 * @param g Graphics sur le quelle on déssine le forme parser
 	 * @throws DessinException Exception lancé si cas non géré dans un expert ou le COR

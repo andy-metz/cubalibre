@@ -5,7 +5,10 @@ package clientserveurdessin.serveur.mieux;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
-
+/**
+ * @author Jérôme Olivier andré
+ *
+ */
 public class ChargementPolygoneCOR extends ChargementFormeCOR {
 	
 	/**

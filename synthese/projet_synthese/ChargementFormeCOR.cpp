@@ -22,6 +22,8 @@ Forme * ChargementFormeCOR::charge(const string texte) const{
 		{
 		return (this->suivant->charge(texte));}
 		else
-		{	return NULL;}
+		{
+			throw Erreur("Le fichier recherche n existe pas");
+			return NULL;}
 	}
 }

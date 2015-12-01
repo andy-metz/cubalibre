@@ -9,7 +9,7 @@
 #include <string.h>
 #include <string>
 #include <sstream>
-#include "Erreur.h"
+#include "Erreur.hpp"
 #include "MaWinsock.h"
 #include "ClientDessin.hpp"
 

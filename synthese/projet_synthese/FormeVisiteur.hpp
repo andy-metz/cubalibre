@@ -21,6 +21,7 @@
 *
 *
 */
+#include "Erreur.hpp"
 class Triangle;
 class Segment;
 class Polygone;

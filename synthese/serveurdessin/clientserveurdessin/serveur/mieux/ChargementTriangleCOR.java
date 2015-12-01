@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import javax.management.modelmbean.DescriptorSupport;
 
 /**
- * @author Jérome Olivier
- *
+ * @author Jérôme Olivier andré
  *
  */
 public class ChargementTriangleCOR extends ChargementFormeCOR {

@@ -3,43 +3,28 @@ mise en oeuvre de la classe Erreur
 */
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;
-
-#include <stdio.h>
-#include <string.h>
-#include <iostream>
 #include <string>
-#include "Erreur.h"
-//#pragma warning(disable: warning-code)
+#include "Erreur.hpp"
+/**
+*	Destructeur de la classe Erreur
+*/
+Erreur::~Erreur(){
 
-
-//int Erreur::LONGUEURMESSAGE(50);
-
-Erreur::Erreur()
-{
-
-	strcpy(this->message, "Erreur !");
 }
+/**
+*	Constructeur de la classe Erreur par défaut le message est "" sinon info_message
+*	@param: phrase
+*/
+Erreur::Erreur(string const& phrase) throw() :info_message(info_message){}
 
-Erreur::Erreur(const char * messageErreur)
+/**
+*	Operateur de string pour la classe erreur. 
+*	Permet d'afficher le messaged'erreur dans un flux
+*   @param stream : le flux dans lequelle on doit envoyer le message d'erreur
+*	@param e : L'erreur qui être transmise dans le flux
+*/
+ostream&operator<<(ostream&stream, const Erreur e)
 {
-	strcpy(this->message, "Erreur : ");
-	int l = strlen(messageErreur);
-	static int n = LONGUEURMESSAGE - 9;
-	if (l <= n) strcat(this->message, messageErreur);
-	else
-	{
-		strncat(this->message, messageErreur, n);
-		this->message[LONGUEURMESSAGE] = '\0';
-	}
-}
-
-Erreur::operator string() const
-{
-	return string(this->message);
-}
-
-ostream & operator << (ostream & os, const Erreur & erreur)
-{
-	os << (string)erreur;
-	return os;
+	stream << e.info_message << endl;
+	return stream;
 }

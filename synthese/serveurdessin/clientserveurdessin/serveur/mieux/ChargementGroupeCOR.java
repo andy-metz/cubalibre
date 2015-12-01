@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 /**
- * @author Jérôme
+ * @author Jérôme Olivier andré
  *
  */
 public class ChargementGroupeCOR extends ChargementFormeCOR {
@@ -52,21 +52,10 @@ public class ChargementGroupeCOR extends ChargementFormeCOR {
 					String forme_courante = s.substring(pos + 1, fpos-decalage);
 					// recupérer la couleur du groupe et la concatener à la string envoyer
 					System.out.println(forme_courante+"ici");
-					cor.dessiner(forme_courante, g);
-					/*if ((forme_courante.find(tri)) != string::npos)
-					{
-						Groupe::addForme(new Triangle(forme_courante));
-						decalage = decalage + forme_courante.size();
-					}*/
+					cor.dessiner(forme_courante, g);				
 				}
 			}
-			
-			
 		}
-	/*"Groupe:{Triangle:p1(1,1),p2(4,5),p3(3,7)},"
-	+ "{Segment((0.1,2),(3,4.5))},"
-	+ "{Cercle(rayon(10),centre(0.5,512.5))},"
-	+ "{Polygone:p0(1,1),p1(2,3),p2(2,5),p3(1,6),p4(0,5),p5(0,3)}");*/
 	}
 
 }

@@ -48,15 +48,15 @@ Cercle::Cercle(const string&s):
 {
     int cerclePos=s.find("Cercle(");
     if(cerclePos==string::npos)
-        cout<<"error"<<endl;/// TODO throw exception
+		throw Erreur("La chaine n'est pas bien formaté");
     int rayonPos=s.find("rayon(",cerclePos+6);
     int centrePos=s.find("centre(",cerclePos+6);
     if(rayonPos==string::npos||centrePos==string::npos)
-        cout<<"error"<<endl;/// TODO throw exception
+		throw Erreur("La chaine n'est pas bien formaté");
     int rayonFin=s.find(")",rayonPos+6);
     int centreFin=s.find(")",centrePos+7);
     if(rayonFin==string::npos||centreFin==string::npos)
-        cout<<"error"<<endl;/// TODO throw exception
+		throw Erreur("La chaine n'est pas bien formaté");
     string rayonString=s.substr(rayonPos+6,rayonFin-1);
     string centreString=s.substr(centrePos+6,centreFin-centrePos-6+1);
     stringstream rayonSS(rayonString);
@@ -108,8 +108,11 @@ const Vecteur2D Cercle::getCentre() const {
 */
 
 void Cercle::setRayon(const double &nouv_rayon){
-
-	rayon = nouv_rayon;
+	if (rayon == 0)
+	{
+		throw Erreur("Le rayon doit ête plus grand que 0");
+	}
+	else{ rayon = nouv_rayon; }
 }
 
 /**

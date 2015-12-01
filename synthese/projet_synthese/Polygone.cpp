@@ -28,7 +28,8 @@ Polygone::Polygone(const string &s){
 	}
 	int polyPos = s.find("Polygone:");
 	if (polyPos == string::npos)
-	{	cout << "error" << endl;
+	{
+		throw Erreur("La chaine n'est pas bien formaté");
 	}
 
 	string vect_courant;
@@ -39,11 +40,11 @@ Polygone::Polygone(const string &s){
 	{
 		pos = s.find("p");// on arrive sur un vecteur
 		if (pos == string::npos)
-			cout << "error" << endl;
+			throw Erreur("Le chaine n'est pas bien formaté");
 		vpos = s.find(",", pos +decalage);
 		vpos = s.find(",", vpos+1 );
 		if (vpos == string::npos)
-			cout << "error" << endl;
+			throw Erreur("Le chaine n'est pas bien formaté");
 		vect_courant = s.substr(polyPos + pos + 1 + decalage, vpos + decalage - polyPos);
 		decalage = decalage + 7;
 		Vecteur2D  vect2D(vect_courant);
@@ -73,7 +74,12 @@ void Polygone::accept(FormeVisiteur*fv){
 *	@param nouv_points: les nouveaux points du polygone.
 */
 void Polygone::setPoints(const vector<Vecteur2D> &nouv_points){
-	points=nouv_points;
+	if (nouv_points.size() < 3){
+		throw Erreur("Un polygone possêde au moins 3 points");
+	}
+	else
+	{	points = nouv_points;
+	}
 }
 /**
 *	Getteur de points du Polygone.

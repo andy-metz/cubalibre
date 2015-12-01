@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Erreur.h"
+#include "Erreur.hpp"
 #include "MaWinsock.h"
 
 using namespace std;

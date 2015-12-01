@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 
 /**
- * @author Mertz olivier
+ * @author Jérôme Olivier andré
  *
  */
 public class ChargementSegmentCOR extends ChargementFormeCOR{

@@ -1,34 +1,19 @@
-﻿Build started 01/12/2015 03:37:34.
+﻿Build started 01/12/2015 04:51:26.
      1>Project "C:\Users\MERTZ\git\Git\cubalibre\synthese\projet_synthese\projet_synthese.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Cercle.cpp ChargementFormeCOR.cpp ChargementFormeCORCercle.cpp ChargementFormeCORGroupe.cpp ChargementFormeCORPolygone.cpp ChargementFormeCORSegment.cpp ChargementFormeCORTriangle.cpp ClientDessin.cpp erreur.cpp Forme.cpp Groupe.cpp main.cpp MAWinsock.cpp Polygone.cpp SauvegardeTxt.cpp Segment.cpp Transformation.cpp Triangle.cpp Vecteur2D.cpp
-         Vecteur2D.cpp
-     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\vecteur2d.cpp(213): warning C4805: '==' : unsafe mix of type 'bool' and type 'double' in operation
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Cercle.cpp Groupe.cpp Polygone.cpp Segment.cpp Triangle.cpp erreur.cpp
+         erreur.cpp
          Triangle.cpp
-         Transformation.cpp
          Segment.cpp
-         SauvegardeTxt.cpp
          Polygone.cpp
      1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\polygone.cpp(24): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\polygone.cpp(116): warning C4018: '<' : signed/unsigned mismatch
-         MAWinsock.cpp
-         main.cpp
+     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\polygone.cpp(117): warning C4018: '<' : signed/unsigned mismatch
          Groupe.cpp
      1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\groupe.cpp(43): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\groupe.cpp(119): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\groupe.cpp(155): warning C4018: '<' : signed/unsigned mismatch
-         Forme.cpp
-         erreur.cpp
-         ClientDessin.cpp
-         ChargementFormeCORTriangle.cpp
-         ChargementFormeCORSegment.cpp
-         ChargementFormeCORPolygone.cpp
-         ChargementFormeCORGroupe.cpp
-         ChargementFormeCORCercle.cpp
-         ChargementFormeCOR.cpp
+     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\groupe.cpp(124): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\groupe.cpp(159): warning C4018: '<' : signed/unsigned mismatch
          Cercle.cpp
          Generating Code...
-     1>c:\users\mertz\git\git\cubalibre\synthese\projet_synthese\forme.cpp(43): warning C4715: 'Forme::getColorAsString' : not all control paths return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MERTZ\git\Git\cubalibre\synthese\projet_synthese\Debug\projet_synthese.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\MERTZ\git\Git\cubalibre\synthese\projet_synthese\Debug\projet_synthese.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MERTZ\git\Git\cubalibre\synthese\projet_synthese\Debug\projet_synthese.lib" /MACHINE:X86 Debug\Cercle.obj
          Debug\ChargementFormeCOR.obj
@@ -54,4 +39,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:47.71
+Time Elapsed 00:00:12.93

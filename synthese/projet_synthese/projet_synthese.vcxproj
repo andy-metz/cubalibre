@@ -88,7 +88,7 @@
     <ClInclude Include="ChargementFormeCORTriangle.hpp" />
     <ClInclude Include="ClientDessin.hpp" />
     <ClInclude Include="DessinerSwing.hpp" />
-    <ClInclude Include="erreur.h" />
+    <ClInclude Include="Erreur.hpp" />
     <ClInclude Include="Forme.hpp" />
     <ClInclude Include="FormeVisiteur.hpp" />
     <ClInclude Include="Groupe.hpp" />

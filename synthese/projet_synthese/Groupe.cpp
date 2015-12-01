@@ -50,7 +50,7 @@ Groupe::Groupe(const string &s){
 	{
 		pos = s.find('{',pos+1);// on arrive sur une forme
 		if (pos == string::npos)
-			cout << "error" << endl;
+			throw Erreur("Le format de la chaine non reconnu par le constructeur");
 		else
 		{
 			fpos = s.find('}', pos +1);
@@ -98,8 +98,13 @@ const vector<Forme*> Groupe::getFormes()const{
 *	@param F: la forme à ajouter
 */
 void Groupe::addForme(Forme *F){
-	F->setColor(Groupe::getColor());
-	Groupe::liste_forme.push_back((Forme*)F);
+	if (F == NULL)
+	{	throw Erreur("La Forme doit etre definie !=NULL");
+	}
+	else{
+		F->setColor(Groupe::getColor());
+		Groupe::liste_forme.push_back((Forme*)F);
+	}
 }
 /**
 *	Méthode accept qui permet de se faire visiter par un FormeVisiteur
@@ -151,9 +156,7 @@ Groupe::operator string()const{
 	ss << "Groupe:";
 	string s_type;
 
- 	for (int i = 0;
- 	i<liste_forme.size();
- 	 i++)
+ 	for (int i = 0;	i<liste_forme.size();i++)
 	{
 		s_type=(typeid(*liste_forme[i]).name());
 		if (s_type == typeid(Cercle).name())
@@ -180,6 +183,7 @@ Groupe::operator string()const{
 			ss << "{" << *P << "}";
 			ss << ",";
 		}
+			
 	}
 	ss << "end";
 	string s= ss.str();

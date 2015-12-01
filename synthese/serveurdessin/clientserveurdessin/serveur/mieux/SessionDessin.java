@@ -58,9 +58,6 @@ public void run()
 		//
 		
 		ChargementSegmentCOR chargeursegment = new ChargementSegmentCOR();
-
-		
-		
 	    
 	    String titre;
 	    int Ox, Oy, largeur, hauteur;

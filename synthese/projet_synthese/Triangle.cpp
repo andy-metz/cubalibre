@@ -46,31 +46,31 @@ Triangle::Triangle(const string &s){
 
 	int triPos = s.find("Triangle:");
 	if (triPos == string::npos)
-		cout << "error" << endl;
+		throw Erreur("Le format de la chaine n'est pas reconnu");
 
 	int s1Pos = s.find("p1");//p1 s1Pos=9
 	if (s1Pos == string::npos)
-		cout << "error" << endl;
+		throw Erreur("Le format de la chaine n'est pas reconnu");
 	int v1Pos=s.find(",",s1Pos);//la virgule de p1(x1,y1) 
 	v1Pos = s.find(",",v1Pos);//on va cherher la virgule suivante p1(x1,y1),
 	if (v1Pos == string::npos)
-		cout << "error" << endl;
+		throw Erreur("Le format de la chaine n'est pas reconnu");
 
 	int s2Pos = s.find("p2");//p1(x1,y1),p2
 	if (s2Pos == string::npos)
-		cout << "error" << endl;
+		throw Erreur("Le format de la chaine n'est pas reconnu");
 	int v2Pos = s.find(",", s2Pos );//la virgule de p2(x2,y2) 
 	v2Pos = s.find(",", v2Pos + 1);//p2(x2,y2),
 	if (v2Pos == string::npos)
-		cout << "error" << endl;
+		throw Erreur("Le format de la chaine n'est pas reconnu");
 
 	int s3Pos = s.find("p3");//p2(x2,y2),p3
 	if (s3Pos == string::npos)
-		cout << "error" << endl;
+		throw Erreur("Le format de la chaine n'est pas reconnu");
 	int triFin = s.find(",", s3Pos);//la virgule de p3(x3,y3) 
 	triFin = s.find(")", triFin);//la ")" de p3(x3,y3)
 	if (triFin == string::npos)
-		cout << "error" << endl;
+		throw Erreur("Le format de la chaine n'est pas reconnu");
 
 	string s1 = s.substr(triPos + 11, v1Pos - triPos - 8);
 	string s2 = s.substr(s2Pos, v2Pos);
@@ -86,7 +86,12 @@ Triangle::Triangle(const string &s){
 *	@param point1: Le nouveau premier point du triangle.
 */
 void Triangle::setPoints1(const Vecteur2D &point1){
-	p1=point1;
+	if ((point1 == p2) || (point1 == p3))
+	{	throw Erreur("Choisisez un points differents de p2 ou p3");
+	}
+	else{
+		p1 = point1;
+	}
 }
 
 /**
@@ -94,7 +99,11 @@ void Triangle::setPoints1(const Vecteur2D &point1){
 *	@param point2: Le nouveau premier point du triangle.
 */
 void Triangle::setPoints2(const Vecteur2D &point2){
-	p2=point2;
+	if ((point2 == p1) || (point2 == p3))
+	{
+		throw Erreur("Choisisez un points differents de p1 ou p3");
+	}
+	else{ p2 = point2; }
 }
 
 /**
@@ -102,7 +111,10 @@ void Triangle::setPoints2(const Vecteur2D &point2){
 *	@param point3: Le nouveau premier point du triangle.
 */
 void Triangle::setPoints3(const Vecteur2D &point3){
-	p3=point3;
+	if ((point3 == p2) || (point3 == p1))
+	{
+		throw Erreur("Le points existe deja dans ce triangle");
+	}p3 = point3;
 }
 
 /**
